@@ -21,8 +21,8 @@ public final class Solution {
      */
     public static void rootsOfQuadraticEquation(final int a, final int b,
     final int c) {
-        final int four = 4;
-       int discriminant = (b * b) - (four * a * c);
+        //final int f = 4;
+       int discriminant = (b * b) - (4 * a * c);
        double root1 = (-b + (Math.sqrt(discriminant))) / (2 * a);
        double root2 = (-b - (Math.sqrt(discriminant))) / (2 * a);
        System.out.print(root1 + " " + root2);
@@ -43,7 +43,6 @@ public final class Solution {
     Need to write the rootsOfQuadraticEquation function and print the output.
     */
 }
-
 
 
 
