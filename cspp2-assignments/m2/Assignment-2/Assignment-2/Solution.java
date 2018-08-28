@@ -4,7 +4,8 @@ public class Solution {
     /*
     Do not modify this main function.
     */
-    public static void rootsOfQuadraticEquation(final int a, final int b, final int c)
+    public static void rootsOfQuadraticEquation(final int a, final int b,
+    final int c)
     {
         final int four = 4;
        int discriminant = (b * b) - (four * a * c);
