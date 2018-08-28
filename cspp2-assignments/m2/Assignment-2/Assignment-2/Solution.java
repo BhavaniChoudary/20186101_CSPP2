@@ -13,7 +13,7 @@ public final class Solution {
         //Constructor is not used.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
@@ -28,7 +28,7 @@ public final class Solution {
        System.out.print(root1 + " " + root2);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
