@@ -16,14 +16,17 @@ public class Solution {
     /*
     Need to write the power function and print the output.
     */
-        /**
+    /**
      * { function_description }
      *
-     * @param      args  The arguments
+     * @param      base      The base
+     * @param      exponent  The exponent
+     *
+     * @return     { description_of_the_return_value }
      */
     static long power(final int base, final int exponent) {
         if (exponent > 0) {
-            return base * power( base, exponent - 1);
+            return base * power(base, exponent - 1);
         }
         return 1;
     }
