@@ -6,6 +6,11 @@ public class Solution {
     /*
     Do not modify this main function.
     */
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int base = s.nextInt();
@@ -26,7 +31,7 @@ public class Solution {
      */
     static long power(final int base, final int exponent) {
         if (exponent > 0) {
-            return base * power(base, exponent - 1);
+            return base * power(base , exponent - 1);
         }
         return 1;
     }
