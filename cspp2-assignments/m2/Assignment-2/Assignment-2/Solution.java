@@ -6,9 +6,19 @@ public class Solution {
     /*
     Do not modify this main function.
     */
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //Constructor is not used
     }
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     * @param      c     { parameter_description }
+     */
     public static void rootsOfQuadraticEquation(final int a, final int b,
     final int c) {
         final int four = 4;
@@ -17,6 +27,11 @@ public class Solution {
        double root2 = (-b - (Math.sqrt(discriminant))) / (2 * a);
        System.out.print(root1 + " " + root2);
     }
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
