@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /*
     Do not modify this main function.
     */
@@ -10,7 +10,7 @@ public class Solution {
      * Constructs the object.
      */
     private Solution() {
-        //Constructor is not used
+        //Constructor is not used.
     }
     /**
      * { function_description }
@@ -32,7 +32,7 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
