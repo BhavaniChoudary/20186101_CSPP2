@@ -6,6 +6,9 @@ public class Solution {
     /*
     Do not modify this main function.
     */
+    private Solution() {
+        //Constructor is not used.
+    }
     /**
      * { function_description }.
      *
