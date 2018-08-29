@@ -12,6 +12,10 @@ public class Solution {
      *
      * @param      args  The arguments
      */
+    
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //Constructor.
     }
