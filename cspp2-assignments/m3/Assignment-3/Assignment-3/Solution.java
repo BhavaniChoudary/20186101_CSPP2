@@ -5,12 +5,18 @@ import java.util.Scanner;
  */
 final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Constructor.
+    }
+    /**
      * { function_description }.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);   
+        Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
         System.out.println(gcd(n1, n2));
