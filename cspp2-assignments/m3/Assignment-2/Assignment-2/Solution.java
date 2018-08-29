@@ -19,7 +19,7 @@ final class Solution {
         //Constructor.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
