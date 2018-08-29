@@ -13,7 +13,7 @@ public class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in); 
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
         int a = 7;
@@ -32,3 +32,6 @@ public class Solution {
         System.out.println(count);
     }
 }
+
+
+
