@@ -12,8 +12,8 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
-        Scanner s=new Scanner(System.in); 
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in); 
         int n = s.nextInt();
         int count = 0;
         int a = 7;
@@ -26,7 +26,7 @@ public class Solution {
                 if (rem == a) {
                     count = count + 1;
                 }
-                x = x/ b;
+                x = x / b;
             }
         }
         System.out.println(count);
