@@ -18,6 +18,11 @@ final class Solution {
     private Solution() {
         //Constructor.
     }
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
