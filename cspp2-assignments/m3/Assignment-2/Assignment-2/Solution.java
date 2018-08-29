@@ -12,12 +12,15 @@ public class Solution {
      *
      * @param      args  The arguments
      */
+    private Solution() {
+        //Constructor.
+    }
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
-        int a = 7;
-        int b = 10;
+        final int a = 7;
+        final int b = 10;
         for (int i = 1; i <= n; i++) {
             //int y = 1;
             int x = i;
