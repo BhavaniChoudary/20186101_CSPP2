@@ -7,8 +7,13 @@ import java.util.Scanner;
  */
 public final class Solution {
 
+    /**
+     * Constructs the object.
+     */
     private Solution() {
-
+    /**
+     * { item_description }.
+     */
     }
     /**
      * { function_description }.
