@@ -22,12 +22,12 @@ public final class Solution {
         double sum = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            int numAti = Character.getNumericValue(c);
-            sum = sum + numAti * Math.pow(2, (s.length() - 1) - i);
+            int numi = Character.getNumericValue(c);
+            sum = sum + numi * Math.pow(2, (s.length() - 1) - i);
         }
         int temp = (int) sum;
-        String res = Integer.toString(temp);
-        return res;
+        String result = Integer.toString(temp);
+        return result;
     }
     /**
      * Main function. Returns binaryToDecimal.
@@ -40,8 +40,8 @@ public final class Solution {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
             String s = sc.nextLine();
-            String res = binaryToDecimal(s); //Write binaryToDecimal function
-            System.out.println(res);
+            String result = binaryToDecimal(s); //Write binaryToDecimal function
+            System.out.println(result);
         }
     }
 }
