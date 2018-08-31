@@ -18,9 +18,9 @@ public final class Solution {
     /**
      * This function gives the roots of quadratic equation.
      *
-     * @param      a      Co-efficient of x square 
-     * @param      b      Co-efficient of x 
-     * @param      c      Constant 
+     * @param      a      Co-efficient of x square
+     * @param      b      Co-efficient of x
+     * @param      c      Constant
      */
     public static void rootsOfQuadraticEquation(final int a, final int b,
     final int c) {
