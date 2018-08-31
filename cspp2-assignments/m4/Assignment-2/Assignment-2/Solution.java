@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Class for solution.
  */
 public final class Solution {
-	/**
+    /**
      * Constructs the object.
      */
     private Solution() {
@@ -15,7 +15,8 @@ public final class Solution {
      */
     }
     /**
-     * Main function. Add two matrices of the same size and gives the resultant matrix.
+     * Main function. Add two matrices of the same size and
+     * gives the resultant matrix.
      *
      * @param      args  The arguments
      */
