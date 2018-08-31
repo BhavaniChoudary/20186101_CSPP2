@@ -1,3 +1,6 @@
+/**
+ * @author : BhavaniChoudary
+ */
 import java.util.Scanner;
 /**
  * Class for solution.
@@ -13,14 +16,17 @@ public final class Solution {
         //Constructor is not used.
     }
     /**
-     * { function_description }.
+     * This function gives the roots of quadratic equation.
      *
-     * @param      a     { parameter_description }
-     * @param      b     { parameter_description }
-     * @param      c     { parameter_description }
+     * @param      a      Co-efficient of x square 
+     * @param      b      Co-efficient of x 
+     * @param      c      Constant 
      */
     public static void rootsOfQuadraticEquation(final int a, final int b,
     final int c) {
+        /**
+         * gives roots of quadratic equation.
+         */
         final int f = 4;
        int discriminant = (b * b) - (f * a * c);
        double root1 = (-b + (Math.sqrt(discriminant))) / (2 * a);
@@ -28,7 +34,7 @@ public final class Solution {
        System.out.print(root1 + " " + root2);
     }
     /**
-     * { function_description }.
+     * Main function. Prints roots of equation.
      *
      * @param      args  The arguments
      */
