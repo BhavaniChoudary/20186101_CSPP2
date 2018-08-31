@@ -16,7 +16,7 @@ public class Solution {
      *
      * @param      s  string s as a parameter.
      *
-     * @return     description_of_the_return_value
+     * @return     description_of_the_return_value.
      */
     public static String binaryToDecimal(String s) {
         double sum = 0;
@@ -32,7 +32,7 @@ public class Solution {
     /**
      * Main function. Returns binaryToDecimal.
      *
-     * @param      args  The arguments 
+     * @param      args  The arguments
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
