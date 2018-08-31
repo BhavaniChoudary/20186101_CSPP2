@@ -1,5 +1,5 @@
 /**
- * { item_description }.
+ * @author : BhavaniChoudary
  */
 import java.util.Scanner;
 /**
@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public final class Solution {
     /*
-    Do not modify this main function.
+    * class for calculating.
     */
     /**
      * Constructs the object.
@@ -16,7 +16,7 @@ public final class Solution {
         //Constructor is not used.
     }
     /**
-     * { function_description }.
+     * main function. prints the result.
      *
      * @param      args  The arguments
      */
@@ -28,15 +28,15 @@ public final class Solution {
         System.out.println(result);
     }
     /*
-    Need to write the power function and print the output.
+    power function and returns the output
     */
     /**
-     * { function_description }.
+     * returns the output.
      *
      * @param      base      The base
      * @param      exponent  The exponent
      *
-     * @return     { description_of_the_return_value }
+     * @return     description_of_the_return_value
      */
     static long power(final int base, final int exponent) {
         if (exponent > 0) {
