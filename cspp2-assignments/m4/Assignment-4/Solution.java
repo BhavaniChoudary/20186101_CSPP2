@@ -9,17 +9,17 @@ public class Solution {
 /*
      Main function. Gives the reverse of given string.
     */
-    public static void main(String[] args)
+    public static void main(final String[] args)
     {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String reverse = reverseString(s);    
+        String reverse = reverseString(s);   
         System.out.println(reverse);
     }
     /**
      * Returns reverse of the string.
      *
-     * @param      s    Input string. 
+     * @param      s    Input string.
      *
      * @return     description_of_the_return_value
      */
