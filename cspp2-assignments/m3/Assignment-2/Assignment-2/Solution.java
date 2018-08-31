@@ -1,5 +1,5 @@
 /**
- * { item_description }
+ * @author : BhavaniChoudary
  */
 import java.util.Scanner;
 /**
@@ -8,7 +8,7 @@ import java.util.Scanner;
 final class Solution {
 /* Fill the main function to print the number of 7's between 1 to n*/
     /**
-     * { function_description }.
+     * private solution.
      *
      * @param      args  The arguments
      */
@@ -19,7 +19,7 @@ final class Solution {
         //Constructor.
     }
     /**
-     * { function_description }.
+     * Main function. Returns the output.
      *
      * @param      args  The arguments
      */
