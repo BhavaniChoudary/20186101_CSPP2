@@ -1,4 +1,6 @@
-
+/**
+ * @author : BhavaniChoudary
+ */
 import java.util.Scanner;
 /**
  * Class for solution.
@@ -11,7 +13,7 @@ final class Solution {
         //Constructor.
     }
     /**
-     * { function_description }.
+     * Main function. Gets the gcd value.
      *
      * @param      args  The arguments
      */
@@ -21,11 +23,8 @@ final class Solution {
         int n2 = s.nextInt();
         System.out.println(gcd(n1, n2));
     }
-    /*
-    Need to write the gcd function and print the output.
-    */
     /**
-     * { function_description }.
+     * GCD funcion. Returns the output.
      *
      * @param      n1    The n 1
      * @param      n2    The n 2
@@ -42,6 +41,10 @@ final class Solution {
         return gcd;
     }
 }
+
+
+
+
 
 
 
