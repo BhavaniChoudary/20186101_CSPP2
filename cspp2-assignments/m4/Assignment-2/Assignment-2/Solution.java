@@ -1,9 +1,9 @@
 /**
- * { item_description }.
+ * @author : BhavaniChoudary
  */
 import java.util.Scanner;
 /**
- * { item_description }.
+ * Class for solution.
  */
 public final class Solution {
 	/**
@@ -11,17 +11,17 @@ public final class Solution {
      */
     private Solution() {
     /**
-     * { item_description }.
+     * //Constructor is not used.
      */
     }
     /**
-     * { function_description }.
+     * Main function. Add two matrices of the same size and gives the resultant matrix.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
-         * { var_description }.
+         * Adds matrices of the same size.
          */
         Scanner sc = new Scanner(System.in);
         int a1rows = sc.nextInt();
