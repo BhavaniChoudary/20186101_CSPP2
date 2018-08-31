@@ -1,5 +1,5 @@
 /**
- * { item_description }.
+ * @author : BhavaniChoudary
  */
 import java.util.Scanner;
 /**
@@ -7,21 +7,21 @@ import java.util.Scanner;
  */
 public final class Solution {
     /**
-    *Fill this main function to print maximum of given array.
+    *Fills the main function to print maximum of given array.
     */
     private Solution() {
         /**
-         * { item_description }.
+         * //Constructor is not used.
          */
     }
     /**
-     * { function_description }.
+     * Main function. Prints the largest number in the given array.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
-         * { var_description }.
+         * Gives the final output.
          */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
