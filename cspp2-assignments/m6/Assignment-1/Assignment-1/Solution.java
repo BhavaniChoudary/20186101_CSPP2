@@ -13,9 +13,11 @@ public final class Solution {
         //not used
     }
     /**
-     * Prints the odd composite numbers between 2 and n.
+     * gives boolean value.
      *
-     * @param      n     n value
+     * @param      n     n value.
+     *
+     * @return     description_of_the_return_value.
      */
     static boolean prime(final int n) {
         int c = 0;
