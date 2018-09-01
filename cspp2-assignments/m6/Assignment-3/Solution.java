@@ -29,7 +29,7 @@ final class Solution {
             if (charArray[i] == oldChar) {
                 charArray[i] = newChar;
             }
-          }
+        }
         return charArray;
     }
     /**
