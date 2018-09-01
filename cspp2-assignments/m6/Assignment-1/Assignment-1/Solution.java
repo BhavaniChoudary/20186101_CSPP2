@@ -17,7 +17,7 @@ public final class Solution {
      *
      * @param      n     n value
      */
-    static boolean prime(int n) {
+    static boolean prime(final int n) {
         int c = 0;
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
@@ -27,9 +27,7 @@ public final class Solution {
         if (c == 2) {
             return false;
         }
-        else {
-            return true;
-        }
+        return true;
     }
     /**
      * gives odd composite numbers.
