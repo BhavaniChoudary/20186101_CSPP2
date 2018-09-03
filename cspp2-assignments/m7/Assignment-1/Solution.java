@@ -8,7 +8,7 @@ class InputValidator {
      */
     private String data;
     /**
-     * len is used to calculate data
+     * len is used to calculate data.
      */
     private int len;
     /**
@@ -16,7 +16,7 @@ class InputValidator {
      *
      * @param      input  The input
      */
-    public InputValidator(final String input) {
+    InputValidator(final String input) {
         data = input;
         len = data.length();
     }
