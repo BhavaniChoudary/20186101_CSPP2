@@ -26,7 +26,7 @@ class InputValidator {
      * @return     description_of_the_return_value.
      */
     public boolean validateData() {
-        int six = 6;
+        final int six = 6;
         if (len < six) {
             return false;
         }
@@ -39,8 +39,10 @@ class InputValidator {
 public class Solution {
     /**
      * Main function.
+     *
+     * @param      args  The arguments
      */
-    public static void main(String args[]) {
+    public static void main(final String args[]) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
         InputValidator i = new InputValidator(input);
