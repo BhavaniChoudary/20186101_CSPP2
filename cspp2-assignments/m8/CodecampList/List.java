@@ -104,10 +104,14 @@ public class List {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
      * The method returns an int. Empty list should return 0.
     /**
-     * returns size.
+     * returns size
+     *
+     * @return     description_of_the_return_value.
+     */
+    /**
+     * { function_description }
      *
      * @return     description_of_the_return_value.
      */
@@ -146,7 +150,7 @@ public class List {
         // Think about what to do to the size variable.
         if (index < size) {
             for (int i = index; i < size - 1; i++) {
-                list[i] = list[i+1];
+                list[i] = list[i + 1];
             }
             size--;
             list[size] = 0;
@@ -173,7 +177,7 @@ public class List {
      *
      * @return     description_of_the_return_value.
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index > -1 && index < size) {
             return list[index];
@@ -232,7 +236,7 @@ public class List {
      *
      * @return     description_of_the_return_value.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
@@ -253,7 +257,7 @@ public class List {
      *
      * @return     description_of_the_return_value.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
