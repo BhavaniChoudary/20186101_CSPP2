@@ -99,19 +99,14 @@ public class List {
         list[size] = item;
         size++;
     }
-
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
      * The method returns an int. Empty list should return 0.
-    /**
-     * returns size
-     *
-     * @return     description_of_the_return_value.
      */
     /**
-     * { function_description }
+     * returns size
      *
      * @return     description_of_the_return_value.
      */
@@ -184,7 +179,6 @@ public class List {
         }
         return -1;
     }
-
     /*
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -194,7 +188,6 @@ public class List {
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.e., if the list has numbers 1, 2, 3
@@ -203,7 +196,6 @@ public class List {
      * Example: [1,2,3,0,0,0,0,0,0,0]
      * toString should only return the items in the list and
      * not all the elements of the array.
-     *
      */
     /**
      * Returns a string representation of the object.
