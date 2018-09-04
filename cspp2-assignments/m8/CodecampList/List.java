@@ -48,7 +48,6 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
      */
     // declare a private int size
     // again, don't initialize it here
@@ -88,7 +87,6 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
      * The method returns void (nothing).
      */
     /**
@@ -96,7 +94,7 @@ public class List {
      *
      * @param      item  The item.
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         list[size] = item;
         size++;
@@ -108,7 +106,6 @@ public class List {
      * to the objects outside the list
      * 
      * The method returns an int. Empty list should return 0.
-     */
     /**
      * returns size.
      *
@@ -144,7 +141,7 @@ public class List {
      *
      * @param      index  The index.
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index < size) {
