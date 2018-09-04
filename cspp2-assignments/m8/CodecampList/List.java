@@ -1,9 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+/**
+ * List of class.
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -11,7 +12,6 @@ public class List {
      * So, assume we are only going to have ints in the list
      * We need to create an array of ints to store the items
      * added to the list.
-     *
      * Create a variable of the type int[]
      * Use the private access specifier
      * Why private access specifier and why not public?
@@ -23,12 +23,13 @@ public class List {
      * This is not desirable and so having private access specifer
      * will protect the array such corruption.
      * This is a hard concept to understand. Discuss with your mentor.
-     *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    * list is private.
+    **/
     private int[] list;
     /*
      * What are the other class variables needed for creating a list?
@@ -49,14 +50,19 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
-
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    * size is private.
+    **/
     private int size;
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
+     */
+    /**
+     * Constructs the List object.
      */
     public List() {
 
@@ -74,7 +80,6 @@ public class List {
         final int n = 10;
         list = new int[n];
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -84,7 +89,12 @@ public class List {
      * Think about how you can use the size variable to add item
      * to the list.
      * 
-     * The method returns void (nothing)
+     * The method returns void (nothing).
+     */
+    /**
+     * adds the items to the list.
+     *
+     * @param      item  The item.
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
@@ -98,6 +108,11 @@ public class List {
      * to the objects outside the list
      * 
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * returns size.
+     *
+     * @return     description_of_the_return_value.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -124,6 +139,11 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
+    /**
+     * removes the items in the list.
+     *
+     * @param      index  The index.
+     */
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -148,6 +168,13 @@ public class List {
      * in the list then that would mean the item doesn't exist.
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
+     */
+    /**
+     * get function description.
+     *
+     * @param      index  The index.
+     *
+     * @return     description_of_the_return_value.
      */
     public int get(int index) {
         // Replace the code below to write the code for get
@@ -177,6 +204,11 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         String str = "[";
@@ -190,12 +222,18 @@ public class List {
         str += list[size - 1] + "]";
         return str;
     } 
-    
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
+     */
+    /**
+     * contains function description. Returns boolean.
+     *
+     * @param      item  The item.
+     *
+     * @return     description_of_the_return_value.
      */
     public boolean contains(int item) {
         // Replace the code below
@@ -206,11 +244,17 @@ public class List {
         }
         return false;
     }
-
     /*
      * Returns the index of the first occurrence 
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
+     */
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     description_of_the_return_value.
      */
     public int indexOf(int item) {
         // Replace the code below
@@ -221,7 +265,11 @@ public class List {
         }
         return -1;
     }
-
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
@@ -269,3 +317,5 @@ public class List {
         }
     }
 }
+
+
