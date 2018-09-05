@@ -18,7 +18,7 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-public final class Fibonacci
+class Fibonacci
 {
     /*
      * fib is a static method takes a argument n
