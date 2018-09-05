@@ -15,8 +15,10 @@ import java.util.Scanner;
  * by invoking the add method provided in the List ADT.
  *
  */
-
-public class Fibonacci
+/**
+ * Class for fibonacci.
+ */
+public final class Fibonacci
 {
     /*
      * fib is a static method takes a argument n
@@ -31,13 +33,13 @@ public class Fibonacci
         l.add(0);
         l.add(1);
         for (int i = 2; i < n; i++) {
-        	int sum = l.get(i-1) + l.get(i-2);
-        	l.add(sum);
+            int sum = l.get(i-1) + l.get(i-2);
+            l.add(sum);
         }
         return l;
     }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
