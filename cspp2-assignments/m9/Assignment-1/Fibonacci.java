@@ -18,8 +18,7 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-public class Fibonacci
-{
+public class Fibonacci {
     /*
      * fib is a static method takes a argument n
      * n is the count of the fibonacci numbers to be generated.
@@ -33,6 +32,13 @@ public class Fibonacci
     private Fibonacci() {
         //not used
     }
+    /**
+     * Funcion description.Returns the output.
+     *
+     * @param      n     parameter_description.
+     *
+     * @return     description_of_the_return_value.
+     */
     public static List fib(int n) {
         // todo - complete this method
         List l = new List(n);
@@ -44,8 +50,12 @@ public class Fibonacci
         }
         return l;
     }
-
-    public static void main(String[] args) {
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
