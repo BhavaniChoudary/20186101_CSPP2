@@ -234,13 +234,20 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         return indexOf(item) == -1;
     }
     /*
      * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
+     */
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     description_of_the_return_value.
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
@@ -250,18 +257,20 @@ public class List {
         }
         return -1;
     }
-   /*Inserts all the elements of specified int 
+   /*Inserts all the elements of specified int
     array to the end of list*/
-    public void addAll(int items[]) {
+    /**
+     * adds all the items in the list.
+     */
+    public void addAll(final int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
-
      /* 
-        Inserts the specified element at the specified index 
+    Inserts the specified element at the specified index
     by moving all the elements to the right.
-        The method returns void (nothing)
+    The method returns void (nothing)
      */
     /**
      * add function.
@@ -269,7 +278,7 @@ public class List {
      * @param      index  The index
      * @param      item   The item
      */
-    public void add(final int index,final int item) {
+    public void add(final int index, final int item) {
          if (index >= 0) {
             for (int i = size; i > index; i--) {
                 list[i] = list[i - 1];
