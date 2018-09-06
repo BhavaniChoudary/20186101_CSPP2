@@ -57,9 +57,9 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
-    
-
+    /**
+     * Constructs the object.
+     */
     public List() {
         // what are the two variables to be initialized here?
         // think about the private variables described above.
@@ -73,7 +73,6 @@ public class List {
         // That is the initial value to use for size.
         size = 0;
     }
-
     /*
      * Overloaded constructor with list capacity as argument
      * The default constructor sets the list capacity to 10
@@ -86,11 +85,15 @@ public class List {
      * a list capacity of n items where n is given as an argument to
      * constructor.
      */
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     public List(final int capacity) {
         size = 0;
         list = new int[capacity];
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -106,30 +109,24 @@ public class List {
         //Inserts the specified element at the end of the zelist.
         list[size++] = item;   
     }
-
     /*
-     *
      * Resize the list
      * Sometimes the clients of the ADT won't know the expected list capacity
      * To solve this the list has to grow dynamically
      * when the maximum capacity is reached and there is no room to add items.
      * So, how do we dynamically resize the list?
      * Java doesn't support resize of array. Here are some options.
-     *
      * Option 1
      * Create a new array of the desired size,
      * and copy the contents from the original array to the new array,
      * using java.lang.System.arraycopy(...);
-     * 
      * Option 2
      * Use java.util.Arrays.copyOf(...) methods which returns a bigger array,
      * with the contents of the original array.
-     *
      * TODO
      * Create a method called resize(). Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
-     * 
      * When should the resize method be invoked and from where?
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
@@ -137,20 +134,16 @@ public class List {
      * You know enough of Object Oriented Programming to answer these questions :-)
      *
      */
-
     // todo create resize method
-
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
         return size;
     }
-
     /*
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
@@ -183,7 +176,6 @@ public class List {
             System.out.println("Invalid Position Exception");
         }
     }
-
     /*
      * Get method has to return the items that is
      * at the index position passed as an argument to the method.
@@ -266,10 +258,16 @@ public class List {
     by moving all the elements to the right.
         The method returns void (nothing)
      */
-    public void add(int index, int item) {
+    /**
+     * add function.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+    public void add(final int index,final int item) {
          if (index >= 0) {
             for (int i = size; i > index; i--) {
-                list[i] = list[i-1];
+                list[i] = list[i - 1];
             }
             list[index] = item;
             size++;
@@ -278,6 +276,13 @@ public class List {
          }
     }
     /* Returns the count of occurances of a given item in the list*/
+    /**
+     * returns the count.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int count(final int item) {
         int count = 0;
         for (int j = 0; j < size; j++) {
@@ -292,7 +297,7 @@ public class List {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
         // code to read the test cases input file
@@ -310,8 +315,7 @@ public class List {
                 String[] t = tokens[1].split(",");
                 if (t.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
-                }
-                else {
+                } else {
                     if (t.length > 1) {
                         l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
                     }
@@ -325,7 +329,7 @@ public class List {
                 if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
                 int temp[] = new int[t1.length];
-                for (int i = 0;i < temp.length; i++) {
+                for (int i = 0; i < temp.length; i++) {
                     temp[i] = Integer.parseInt(t1[i]);
                 }
                 l.addAll(temp);
