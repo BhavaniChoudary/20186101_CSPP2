@@ -117,40 +117,11 @@ public class List {
         //Inserts the specified element at the end of the zelist.
         list[size++] = item;
     }
-    /*
-     * Resize the list
-     * Sometimes the clients of the ADT won't know the expected list capacity
-     * To solve this the list has to grow dynamically
-     * when the maximum capacity is reached and there is no room to add items.
-     * So, how do we dynamically resize the list?
-     * Java doesn't support resize of array. Here are some options.
-     * Option 1
-     * Create a new array of the desired size,
-     * and copy the contents from the original array to the new array,
-     * using java.lang.System.arraycopy(...);
-     * Option 2
-     * Use java.util.Arrays.copyOf(...) methods which returns a bigger array,
-     * with the contents of the original array.
-     * TODO
-     * Create a method called resize(). Resize should create an new array that is
-     * double the size of the old array.
-     * Then copy the contents of the old array to the new one.
-     * When should the resize method be invoked and from where?
-     * Will the client invoke resize or is it internal to List class?
-     * Should the resize be public method or private?
-     * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
-     */
-    // todo create resize method
-    /*
-     * The size method returns the value of the size.
-     * The purpose of the method is to announce the size of the list
-     * to the objects outside the list
-     * The method returns an int. Empty list should return 0.
-     */
     /**
-    * size is public.
-    **/
+     * returns the size of list.
+     *
+     * @return     description_of_the_return_value.
+     */
     public int size() {
         return size;
     }
