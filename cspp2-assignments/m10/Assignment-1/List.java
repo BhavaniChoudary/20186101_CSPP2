@@ -146,11 +146,10 @@ public class List {
      * The method returns void (nothing)
      */
     /**
-     * remove function description. 
-     *
+     * remove function description.
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
@@ -173,8 +172,15 @@ public class List {
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
+    /**
+     * returns the value at the given index.
+     *
+     * @param      index  The index
+     *
+     * @return     description_of_the_return_value.
+     */
     public int get(final int index) {
-        if(index < 0 || index >= size) {
+        if (index < 0 || index >= size) {
             return -1;
         } else {
             return list[index];
@@ -198,9 +204,15 @@ public class List {
      * toString should only return the items in the list and
      * not all the elements of the array.
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        if (size == 0)
+        if (size == 0) {
             return "[]";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -214,6 +226,13 @@ public class List {
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
+     */
+    /**
+     * returns the items that are in the list.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public boolean contains(int item) {
         return indexOf(item) == -1;
