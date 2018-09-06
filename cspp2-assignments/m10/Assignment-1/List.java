@@ -262,6 +262,11 @@ public class List {
     /**
      * adds all the items in the list.
      */
+    /**
+     * Adds all.
+     *
+     * @param      items  The items
+     */
     public void addAll(final int[] items) {
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
