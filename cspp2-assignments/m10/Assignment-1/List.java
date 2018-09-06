@@ -25,13 +25,14 @@ public class List {
      * This is not desirable and so having private access specifer
      * will protect the array such corruption.
      * This is a hard concept to understand. Discuss with your mentor.
-     *
     */
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+    /**
+    * list is private.
+    **/
     private int[] list;
-
     /*
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -180,8 +181,8 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if(index >= 0 && index < size) {
-            for(int i = index; i < size - 1; i++) {
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
@@ -230,11 +231,11 @@ public class List {
      *
      */
     public String toString() {
-        if(size == 0)
+        if (size == 0)
             return "[]";
         String str = "[";
         int i = 0;
-        for(i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
@@ -257,8 +258,8 @@ public class List {
      * or -1 if this list does not contain the element.
      */
     public int indexOf(int item) {
-        for(int i = 0; i < size; i++) {
-            if(item == list[i])
+        for (int i = 0; i < size; i++) {
+            if (item == list[i])
                 return i;
         }
         return -1;
@@ -266,7 +267,7 @@ public class List {
    /*Inserts all the elements of specified int 
     array to the end of list*/
     public void addAll(int items[]) {
-        for ( int i = 0; i < items.length; i++) {
+        for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
@@ -276,7 +277,7 @@ public class List {
     by moving all the elements to the right.
         The method returns void (nothing)
      */
-    public void add(int index,int item) {
+    public void add(int index, int item) {
          if (index >= 0) {
             for (int i = size; i > index; i--) {
                 list[i] = list[i-1];
@@ -287,24 +288,25 @@ public class List {
             System.out.println("Negative Index Exception");
          }
     }
-    
     /* Returns the count of occurances of a given item in the list*/
-    public int count(int item)
+    public int count(final int item)
     {
         int count = 0;
         for (int j = 0; j < size; j++) {
             if (item == list[j]) {
                 count += 1;
             }
-        } 
+        }
         return count;
     }
-
-
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
-
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
@@ -316,13 +318,13 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                case "add":
-                if((tokens.length)==2){
+                if ((tokens.length)==2){
                 String[] t = tokens[1].split(",");
-                if(t.length==1){
+                if (t.length==1) {
                     l.add(Integer.parseInt(tokens[1]));
                 }
-                else{
-                    if(t.length>1)
+                else {
+                    if (t.length>1)
                         l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
                     }
                 }
@@ -331,10 +333,10 @@ public class List {
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
                 break;
                 case "addAll":
-                if(tokens.length==2){
+                if (tokens.length==2) {
                 String[] t1 = tokens[1].split(",");
                 int temp[]=new int[t1.length];
-                for(int i=0;i<temp.length;i++)
+                for (int i=0;i<temp.length;i++)
                     temp[i]=Integer.parseInt(t1[i]);
                 l.addAll(temp);
                 }
@@ -367,3 +369,6 @@ public class List {
         }
     }
 }
+
+
+
