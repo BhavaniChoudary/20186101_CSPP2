@@ -30,7 +30,7 @@ public class List {
     /**
     * list is private.
     **/
-    private int[] list;
+    private final int[] list;
     /*
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -52,6 +52,9 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    * size is private.
+    **/
     private int size;
     /*
      * The purpose of the constructor is to initialize the
@@ -102,8 +105,12 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
      * The method returns void (nothing)
+     */
+    /**
+     * function_description.
+     *
+     * @param      item  The item
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
@@ -132,7 +139,6 @@ public class List {
      * Should the resize be public method or private?
      * Should the resize method return any values?
      * You know enough of Object Oriented Programming to answer these questions :-)
-     *
      */
     // todo create resize method
     /*
@@ -141,6 +147,9 @@ public class List {
      * to the objects outside the list
      * The method returns an int. Empty list should return 0.
      */
+    /**
+    * size is public.
+    **/
     public int size() {
         return size;
     }
@@ -163,6 +172,11 @@ public class List {
      * So, the new array looks like this.
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
+     */
+    /**
+     * remove function description. 
+     *
+     * @param      index  The index
      */
     public void remove(int index) {
         // write the logic for remove here.
