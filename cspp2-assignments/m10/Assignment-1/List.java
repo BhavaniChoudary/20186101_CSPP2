@@ -1,8 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+/**
+ * List of class.
+ */
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -25,7 +27,6 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -48,7 +49,6 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
      */
 
     // declare a private int size
@@ -87,11 +87,9 @@ public class List {
      * There will be some clients of the ADT that will require
      * the list to contain n elements which is known
      * at the time of creating the list.
-     * 
      * The overloaded constructor is a way to initialize a list with
      * a list capacity of n items where n is given as an argument to
      * constructor.
-     * 
      */
     public List(int capacity) {
         size = 0;
@@ -268,27 +266,42 @@ public class List {
    /*Inserts all the elements of specified int 
     array to the end of list*/
     public void addAll(int items[]) {
-
+        for ( int i = 0; i < items.length; i++) {
+            add(items[i]);
+        }
     }
 
      /* 
         Inserts the specified element at the specified index 
-	by moving all the elements to the right.
+    by moving all the elements to the right.
         The method returns void (nothing)
      */
     public void add(int index,int item) {
-         // write the logic 
+         if (index >= 0) {
+            for (int i = size; i > index; i--) {
+                list[i] = list[i-1];
+            }
+            list[index] = item;
+            size++;
+         } else {
+            System.out.println("Negative Index Exception");
+         }
     }
     
     /* Returns the count of occurances of a given item in the list*/
     public int count(int item)
     {
-         // write the logic 
-        return 0;
+        int count = 0;
+        for (int j = 0; j < size; j++) {
+            if (item == list[j]) {
+                count += 1;
+            }
+        } 
+        return count;
     }
 
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -352,5 +365,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
