@@ -264,7 +264,6 @@ public class List {
     /**
      * Inserts all the elements of specified int array to the end of
      * list.
-     * 
      * @param      newArray  The new array
      */
     public void addAll(final int[] newArray) {
@@ -277,7 +276,12 @@ public class List {
      Removes all of its elements that are contained in the specified int
      array.
     */
-    public void removeAll(int[] newArray) {
+     /**
+      * Removes all elements containes in specific array.
+      *
+      * @param      newArray  The new array
+      */
+    public void removeAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < size; j++) {
@@ -306,7 +310,7 @@ public class List {
      *
      * @return     returns a list object containing elements.
      */
-    public List subList(int start, int end) {
+    public List subList(int start, final int end) {
         // write the logic for subList
         List newlist = new List();
         if (start <= 0 || end > size) {
@@ -331,7 +335,7 @@ public class List {
      *
      * @return     returns true or false.
      */
-    public boolean equals(List list1 ) {
+    public boolean equals(final List list1 ) {
         if (Arrays.equals(list1.list, list)) {
             return true;
         }
@@ -454,6 +458,8 @@ public class List {
         }
     }
 }
+
+
 
 
 
