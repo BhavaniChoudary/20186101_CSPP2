@@ -310,7 +310,7 @@ public class List {
      *
      * @return     returns a list object containing elements.
      */
-    public List subList(int start, final int end) {
+    public List subList(final int start, final int end) {
         // write the logic for subList
         List newlist = new List();
         if (start <= 0 || end > size) {
@@ -335,14 +335,11 @@ public class List {
      *
      * @return     returns true or false.
      */
-    public boolean equals(final List list1 ) {
+    public boolean equals(final List list1) {
         if (Arrays.equals(list1.list, list)) {
             return true;
         }
         return false;
-    }
-    {
-        // Replace the code below
     }
     /*
     * Removes all the elements from list
