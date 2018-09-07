@@ -25,7 +25,7 @@ class Student {
      */
     public String getName() {
     //Getter method which returns the value of instance variable
-        return ;
+        return this.name;
     }
     @Override
     public boolean equals(final Object other) {
