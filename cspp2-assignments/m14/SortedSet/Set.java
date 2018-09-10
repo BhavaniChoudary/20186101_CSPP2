@@ -30,13 +30,13 @@ public class Set {
         size = 0;
     }
 /**
- * Gets the index.
+ * Gets the ind.
  *
  * @param      item  The item
  *
- * @return     The index.
+ * @return     The ind.
  */
-    public int getIndex(final int item) {
+    public int getind(final int item) {
         for (int i = 0; i < size(); i++) {
             if (item <= this.get(i)) {
                 return i;
@@ -51,7 +51,7 @@ public class Set {
         set = java.util.Arrays.copyOf(set, size * 2);
     }
     /**
-     * { Adds list of digits }.
+     * Adds list of digits
      *
      * @param arr The array of int which has list of elemets
      */
@@ -63,34 +63,34 @@ public class Set {
     /**
      * { Adds items }.
      *
-     * @param      index  The index
+     * @param      ind  The ind
      * @param      item   The item
      */
-    public void add(final int index, final int item) {
-        if (index < 0) {
-            System.out.println("Negative Index Exception");
+    public void add(final int ind, final int item) {
+        if (ind < 0) {
+            System.out.println("Negative ind Exception");
         } else {
-            for (int i = size; i > index; i--) {
+            for (int i = size; i > ind; i--) {
                 set[i] = set[i - 1];
             }
-            set[index] = item;
+            set[ind] = item;
             size++;
         }
     }
     /**
      * Finds the intersection of the two sets.
      * @param  other as set 2.
-     * @return the result that contains the common
+     * @return the res that contains the common
      * elements of the two sets.
      */
     public Set intersection(final Set other) {
-        Set result = new Set();
+        Set res = new Set();
         for (int i = 0; i < this.size; i++) {
             if (other.contains(this.get(i))) {
-                result.add(this.get(i));
+                res.add(this.get(i));
             }
         }
-        return result;
+        return res;
     }
 
     /**
@@ -113,18 +113,18 @@ public class Set {
      * @return the cartesian product in the form of 2D array.
      */
     public int[][] cartesianProduct(final Set other) {
-        int[][] result = new int[this.size() * other.size()][2];
+        int[][] res = new int[this.size() * other.size()][2];
         int k = -1;
         if (this.size() == 0 || other.size() == 0) {
             return null;
         }
         for (int i = 0; i < this.size(); i++) {
             for (int j = 0; j < other.size(); j++) {
-                result[++k][0] = this.get(i);
-                result[k][1] = other.get(j);
+                res[++k][0] = this.get(i);
+                res[k][1] = other.get(j);
             }
         }
-        return result;
+        return res;
     }
 
     /**
@@ -137,15 +137,15 @@ public class Set {
 
     /**
      * This method finds out the elements
-     * at a particular index.
-     * @param  index to return the element at this index.
-     * @return the element at this index, otherwise return -1.
+     * at a particular ind.
+     * @param  ind to return the element at this ind.
+     * @return the element at this ind, otherwise return -1.
      */
-    public int get(final int index) {
-        if (index < 0 || index >= this.size()) {
+    public int get(final int ind) {
+        if (ind < 0 || ind >= this.size()) {
             return -1;
         } else {
-            return set[index];
+            return set[ind];
         }
     }
 
@@ -172,7 +172,7 @@ public class Set {
      *                   otherwise false.
      */
     public boolean contains(final int item) {
-        return indexOf(item) != -1;
+        return indOf(item) != -1;
     }
     /**
      * { Returns last digit }.
@@ -195,8 +195,8 @@ public class Set {
      */
     public void add(final int item) {
         if (!contains(item)) {
-            int index = getIndex(item);
-            add(index, item);
+            int ind = getind(item);
+            add(ind, item);
         }
     }
     /**
@@ -208,23 +208,23 @@ public class Set {
      * @return     { description_of_the_return_value }
      */
     public int[] subSet(final int first, final int last) {
-        int fromindex = getIndex(first);
-        int toindex = getIndex(last);
-        int[] subset = new int[toindex - fromindex];
+        int fromind = getind(first);
+        int toind = getind(last);
+        int[] subset = new int[toind - fromind];
         int k = 0;
-        for (int i = fromindex; i < toindex; i++) {
+        for (int i = fromind; i < toind; i++) {
             subset[k++] = this.get(i);
         }
         return subset;
     }
 
     /**
-     * Finds the index of the item in this set.
+     * Finds the ind of the item in this set.
      * @param  item to be find in this set.
-     * @return the index if the item is found in this set,
+     * @return the ind if the item is found in this set,
      * otherwise false.
      */
-    public int indexOf(final int item) {
+    public int indOf(final int item) {
         for (int i = 0; i < size; i++) {
             if (set[i] == item) {
                 return i;
