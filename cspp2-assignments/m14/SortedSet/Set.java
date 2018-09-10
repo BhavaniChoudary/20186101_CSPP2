@@ -5,26 +5,17 @@ import java.util.Arrays;
  * Class for set.
  */
 public class Set {
-
     /**
      * This constant is used to create an array
      * with the initial capacity.
      */
     public static final int TEN = 10;
-
     /**
      * holds the elemtns in this Set array.
      */
     private int[] set;
 
-    /**
-     * indicates the number of elememnts of this set.
-     */
     private int size;
-
-    /**
-     * Default constructor to create an array with the szie 10.
-     */
     public Set() {
         set = new int[TEN];
         size = 0;
