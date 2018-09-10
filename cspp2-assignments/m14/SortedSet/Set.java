@@ -106,7 +106,6 @@ public class Set {
         }
         return intersection(other);
     }
-
     /**
      * This finds out the cartesian product of two sets.
      * @param  other as a Set 2.
@@ -126,7 +125,6 @@ public class Set {
         }
         return res;
     }
-
     /**
      * This methods finds out the number of elements in the set.
      * @return the integer value indicates the number of elements.
@@ -134,7 +132,6 @@ public class Set {
     public int size() {
         return size;
     }
-
     /**
      * This method finds out the elements
      * at a particular ind.
@@ -217,7 +214,6 @@ public class Set {
         }
         return subset;
     }
-
     /**
      * Finds the ind of the item in this set.
      * @param  item to be find in this set.
