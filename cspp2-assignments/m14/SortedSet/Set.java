@@ -51,7 +51,7 @@ public class Set {
         set = java.util.Arrays.copyOf(set, size * 2);
     }
     /**
-     * Adds list of digits
+     * Adds list of digits.
      *
      * @param arr The array of int which has list of elemets
      */
@@ -175,9 +175,9 @@ public class Set {
         return indOf(item) != -1;
     }
     /**
-     * { Returns last digit }.
+     * Returns last digit.
      *
-     * @return     { description_of_the_return_value }
+     * @return     description_of_the_return_value.
      */
 
     public int last() {
@@ -200,12 +200,12 @@ public class Set {
         }
     }
     /**
-     * { This method returns subset }.
+     * This method returns subset.
      *
      * @param      first  The first
      * @param      last   The last
      *
-     * @return     { description_of_the_return_value }
+     * @return     description_of_the_return_value.
      */
     public int[] subSet(final int first, final int last) {
         int fromind = getind(first);
@@ -233,21 +233,21 @@ public class Set {
         return -1;
     }
     /**
-     * { Returns array }.
+     * Returns array.
      *
-     * @param      last  The last element
+     * @param      last  The last element.
      *
-     * @return     {A array of numbers  }
+     * @return     A array of numbers.
      */
         public int[] headset(final int last) {
         return subSet(get(0), last);
     }
         /**
-         * { function_description }.
+         * function_description.
          *
-         * @param      s     { parameter_description }
+         * @param      s     parameter_description.
          *
-         * @return     { description_of_the_return_value }
+         * @return     description_of_the_return_value.
          */
     public static int[] intArray(final String s) {
         String input = s;
@@ -262,7 +262,7 @@ public class Set {
                .toArray();
     }
     /**
-     * { function_description }.
+     * function_description.
      *
      * @param      args  The arguments
      */
