@@ -51,7 +51,7 @@ class SortedSet extends Set {
 
     public int[] subSet(final int start, final int end) throws
     InvalidSubSelectionException {
-        if (start < end) {
+        if (start > end) {
             throw new InvalidSubSelectionException(
                 "Invalid Arguments to Subset Exception");
         }
@@ -61,7 +61,7 @@ class SortedSet extends Set {
             if (set[i] >= start) {
                 for (int j = i; j < size; j++) {
                     if (set[j] < end) {
-                        result[k] = set[i];
+                        result[k++] = set[i];
                     }
                     break;
                 }
@@ -82,7 +82,7 @@ class SortedSet extends Set {
         int[] result = new int[size];
         int temp = 0;
         for (int i = 0; i < size; i++) {
-            if (set[i] > end) {
+            if (set[i] < end) {
                 result[i] = set[i];
                 temp++;
             }
