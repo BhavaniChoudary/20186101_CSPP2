@@ -5,7 +5,11 @@ import java.util.Arrays;
  * Exception for signaling invalid sub selection errors.
  */
 class InvalidSubSelectionException extends Exception {
-
+    /**
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
     InvalidSubSelectionException(final String s) {
         super(s);
     }
@@ -23,7 +27,9 @@ class EmptysetException extends Exception {
         super(s);
     }
 }
-
+/**
+ * Class for sorted set.
+ */
 class SortedSet extends Set {
     /**
      * sort function.
@@ -48,7 +54,16 @@ class SortedSet extends Set {
         }
         sort(set);
     }
-
+    /**
+     * function_description.
+     *
+     * @param      start                         The start
+     * @param      end                           The end
+     *
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     InvalidSubSelectionException  { exception_description }
+     */
     public int[] subSet(final int start, final int end) throws
     InvalidSubSelectionException {
         if (start > end) {
