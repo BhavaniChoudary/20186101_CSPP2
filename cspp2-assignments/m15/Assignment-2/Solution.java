@@ -8,7 +8,7 @@ class InvalidSubSelectionException extends Exception {
     /**
      * Constructs the object.
      *
-     * @param      s     { parameter_description }
+     * @param      s     parameter_description.
      */
     InvalidSubSelectionException(final String s) {
         super(s);
@@ -48,6 +48,11 @@ class SortedSet extends Set {
             }
         }
     }
+    /**
+     * function_description.
+     *
+     * @param      item  The item
+     */
     public void add(final int item) {
         if (!contains(item)) {
             set[size++] = item;
@@ -120,6 +125,11 @@ class SortedSet extends Set {
         }
         return set[size - 1];
     }
+    /**
+     * Adds all the elements in the list.
+     *
+     * @param      element  The element
+     */
     public void addAll(final int[] element) {
         for (int i : element) {
             this.add(i);
@@ -133,7 +143,9 @@ public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution() {}
+    private Solution() {
+
+    }
     /**
      * helper function to convert string input to int array.
      *
