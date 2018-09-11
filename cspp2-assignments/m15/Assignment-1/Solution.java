@@ -269,6 +269,11 @@ final class Solution {
      Removes all of its elements that are contained in the specified int
      array.
     */
+     /**
+      * Removes all the elements in the array.
+      *
+      * @param      newArray  The new array.
+      */
      public void removeAll(final int[] newArray) {
         int[] temp = new int[list.length];
         System.arraycopy(list, 0, temp, 0, list.length);
@@ -368,7 +373,7 @@ final class Solution {
      *
      * @param      item  The item
      *
-     * @return     returns the count value
+     * @return     returns the count value.
      */
     public int count(final int item) {
         int count = 0;
@@ -382,7 +387,7 @@ final class Solution {
     /**
      * Main function.
      *
-     * @param      args  The arguments
+     * @param      args  The arguments.
      */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
