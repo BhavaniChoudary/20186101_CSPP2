@@ -15,7 +15,7 @@ class InvalidPositionException extends Exception {
     }
 }
 /**
- * Class for invalid index.
+ * invalid index class.
  */
 class InvalidIndex extends Exception {
     /**
@@ -117,7 +117,11 @@ final class Solution {
         // replace the code below to implement the size method
         return size;
     }
-
+    /**
+     * Doubles the size of the list.
+     *
+     * @param      item  The item.
+     */
     public void resize(final int item) {
         list = Arrays.copyOf(list, size * 2);
         list[size++] = item;
@@ -137,7 +141,13 @@ final class Solution {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-
+    /**
+     * Removes the specific element from the list.
+     *
+     * @param      index                     The index
+     *
+     * @throws     InvalidPositionException  exception_description.
+     */
     public void remove(final int index) throws InvalidPositionException {
         // write the logic for remove here. Think about what to do to the size
         // variable.
@@ -151,7 +161,9 @@ final class Solution {
             throw new InvalidPositionException(str);
         }
     }
-
+    /**
+     * gives the element at the index in the list.
+     */
     /*
      * Get method has to return the items that is at the index position passed
      * as an argument to the method. If the item doesn't exist then return a -1
