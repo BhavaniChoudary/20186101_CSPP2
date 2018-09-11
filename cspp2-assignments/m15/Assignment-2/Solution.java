@@ -5,7 +5,11 @@ import java.util.Arrays;
  * Exception for signaling invalid sub selection errors.
  */
 class InvalidSubSelectionException extends Exception {
-
+    /**
+     * Constructs the object.
+     *
+     * @param      s     parameter_description.
+     */
     InvalidSubSelectionException(final String s) {
         super(s);
     }
