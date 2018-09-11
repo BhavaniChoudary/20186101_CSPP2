@@ -173,7 +173,13 @@ final class Solution {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
-
+    /**
+     * gives the element at the index in the list.
+     *
+     * @param      index  The index
+     *
+     * @return     description_of_the_return_value.
+     */
     public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < 0 || index >= size) {
@@ -196,7 +202,11 @@ final class Solution {
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
      */
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         if (size == 0) {
@@ -226,7 +236,13 @@ final class Solution {
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
      */
-
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     description_of_the_return_value.
+     */
     public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
@@ -237,7 +253,7 @@ final class Solution {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list
+    Inserts all the elements of specified int array to the end of list.
     */
     /**
      * Adds all the element given in the array.
