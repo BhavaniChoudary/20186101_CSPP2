@@ -132,21 +132,38 @@ class Patron {
     String getName() {
         return name;
     }
-
+    /**
+     * Gets the mobile.
+     *
+     * @return     The mobile.
+     */
     String getMobile() {
         return mobile;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return name + " " + mobile;
     }
 }
-
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
-
+    /**
+     * var_description.
+     */
     private ArrayList<Show> showList;
+    /**
+     * variable description.
+     */
     private ArrayList<String> ticketList;
-
+    /**
+     * Constructs the object.
+     */
     BookYourShow() {
         showList = new ArrayList<>();
         ticketList = new ArrayList<>();
@@ -207,7 +224,13 @@ class BookYourShow {
             ticketList.add(patron.getMobile() + " " + movie + " " + showTime);
         }
     }
-
+    /**
+     * Prints ticket with movie name, date - time and number.
+     *
+     * @param      movie     The movie
+     * @param      showTime  The show time
+     * @param      mobile    The mobile
+     */
     void printTicket(final String movie, final String showTime,
         final String mobile) {
         /**
