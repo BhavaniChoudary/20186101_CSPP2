@@ -194,7 +194,7 @@ class BookYourShow {
         boolean flag = false;
         String[] sseats = show.getSeats();
         for (String seat : seats) {
-            for (int i = 0; i > sseats.length; i++) {
+            for (int i = 0; i < sseats.length; i++) {
                 if (seat.equals(sseats[i])) {
                     show.setSeatNA(i);
                     flag = true;
