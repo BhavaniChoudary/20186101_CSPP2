@@ -98,19 +98,35 @@ class Show {
         this.showTime = showTime1;
         this.seats = seats1;
     }
-
+    /**
+     * Gets the movie.
+     *
+     * @return     The movie.
+     */
     String getMovie() {
         return movie;
     }
-
+    /**
+     * Gets the show time.
+     *
+     * @return     The show time.
+     */
     String getShowTime() {
         return showTime;
     }
-
+    /**
+     * Gets the seats.
+     *
+     * @return     The seats.
+     */
   String[] getSeats()  {
         return seats;
     }
-
+    /**
+     * Sets the seat N/A.
+     *
+     * @param      index  The index
+     */
     void setSeatNA(final int index) {
         seats[index] = "N/A";
     }
@@ -123,7 +139,9 @@ class Show {
         return movie + "," + showTime;
     }
 }
-
+/**
+ * Class for patron.
+ */
 class Patron {
     /**
      * variable name description.
