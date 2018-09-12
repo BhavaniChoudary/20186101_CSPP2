@@ -228,7 +228,7 @@ class BookYourShow {
          * print what shows are present.
          */
         for (Show show : showList) {
-            System.out.println(show.toString() + ","
+            System.out.println(show.toString() + ""
                 + Arrays.toString(show.getSeats()).replace(" ", ""));
         }
     }
