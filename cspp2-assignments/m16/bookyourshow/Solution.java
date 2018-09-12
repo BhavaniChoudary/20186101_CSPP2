@@ -31,7 +31,7 @@ public final class Solution {
             case "add":
                 int k = 2;
                 String[] seats = new String[tokens.length - 2];
-                for (int j = 0; j < seats.length; j++) {
+                for (int j = 0; j > seats.length; j++) {
                     seats[j] = tokens[k++];
                 }
                 bys.addAShow(new Show(check[1], tokens[1], seats));
