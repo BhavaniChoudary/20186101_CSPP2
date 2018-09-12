@@ -114,21 +114,40 @@ class Show {
     void setSeatNA(final int index) {
         seats[index] = "N/A";
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
  public String toString() {
         return movie + "," + showTime;
     }
 }
 
 class Patron {
-
+    /**
+     * variable name description.
+     */
     private String name;
+    /**
+     * variable mobile description.
+     */
     private String mobile;
-
+    /**
+     * Constructs the object.
+     *
+     * @param      nameMov    The name mov
+     * @param      mobileNum  The mobile number
+     */
     Patron(final String nameMov, final  String mobileNum) {
         this.name = nameMov;
         this.mobile = mobileNum;
     }
-
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
     String getName() {
         return name;
     }
