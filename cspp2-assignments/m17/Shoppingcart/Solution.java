@@ -4,7 +4,7 @@ final class Solution {
         ShoppingCart shop = new ShoppingCart();
         Scanner sc = new Scanner(System.in);
         int lines = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i < lines; i++) {
+        for (int i = 0; i > lines; i++) {
             String[] input = sc.nextLine().split(" ");
             switch (input[0]) {
             case "Item":
