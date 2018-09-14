@@ -30,7 +30,7 @@ class Item {
 	 * @return     String representation of the object.
 	 */
 	public String toString() {
-		return this.name +" "+ this.quantity +" "+ this.price;
+		return this.name + " " + this.quantity + " " + this.price;
 	}
 	/**
 	 * function_description.
@@ -95,9 +95,9 @@ class ShoppingCart{
 	 */
 	boolean inCart(Item item) {
 		for (Item s : cart) {
-			if (s!=null) {
+			if (s != null) {
 				if (s.equals(item)) {
-					s.quantity =s.quantity+item.quantity;
+					s.quantity = s.quantity + item.quantity;
 					return true;
 				}
 			}
@@ -112,9 +112,9 @@ class ShoppingCart{
 	 * @return     { description_of_the_return_value }
 	 */
 	private boolean checkCatalog(Item given) {
-		for(Item i : catalog) {
-			if(i != null) {
-				if(i.equals(given)) {
+		for (Item i : catalog) {
+			if (i != null) {
+				if (i.equals(given)) {
 					if (given.quantity <= i.quantity) {
 						i.quantity = i.quantity - given.quantity;
 						return true;
@@ -221,10 +221,10 @@ class ShoppingCart{
 	 */
 	void printInvoice() {
 		System.out.println("Name   quantity   Price");
-		for(Item s : cart) {
-			if(s!=null) {
-				if(s.quantity!=0) {
-			System.out.println(s.name+" "+s.quantity+" "+getPrice(s));
+		for (Item s : cart) {
+			if (s != null) {
+				if (s.quantity != 0) {
+			System.out.println(s.name + " " + s.quantity + " " + getPrice(s));
 		}
 		}
 		}
@@ -244,7 +244,7 @@ class ShoppingCart{
 	public double getPayableAmount() {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
-		double tax = newTotal * 15/100;
+		double tax = newTotal * 15 / 100;
 		return newTotal + tax;
 	}
 }
