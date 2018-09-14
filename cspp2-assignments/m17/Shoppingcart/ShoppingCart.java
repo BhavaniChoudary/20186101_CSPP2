@@ -131,9 +131,9 @@ class ShoppingCart{
 	 * @param      item  The item
 	 */
 	void removeFromCart(Item item) {
-		for (int i =0;i<cartSize;i++) {
+		for (int i = 0; i < cartSize; i++) {
 			if (item.equals(cart[i])) {
-				cart[i].quantity= cart[i].quantity-item.quantity;
+				cart[i].quantity = cart[i].quantity - item.quantity;
 			}
 		}
 
@@ -143,9 +143,9 @@ class ShoppingCart{
 	 */
 	void showCart() {
 		for (Item i : cart) {
-			if (i!=null) {
-				if (i.quantity!=0) {
-					System.out.println(i.name+" "+i.quantity);
+			if (i != null) {
+				if (i.quantity != 0) {
+					System.out.println(i.name + " " + i.quantity);
 				}
 			}
 		}
@@ -155,7 +155,7 @@ class ShoppingCart{
 	 */
 	void showCatalog() {
 		for (Item i : catalog) {
-			if (i!=null) {
+			if (i != null) {
 				System.out.println(i);
 			}
 		}
@@ -167,7 +167,7 @@ class ShoppingCart{
 	 */
 	double getTotalAmount() {
 		double total=0;
-		for (int i =0; i< cartSize;i++) {
+		for (int i =0; i < cartSize; i++) {
 			total += cart[i].quantity * getPrice(cart[i]);
 		}
 		return total;
@@ -211,7 +211,7 @@ class ShoppingCart{
 		for (String s : validCoupons) {
 			if(s.equals(cou)) {
 				int num =  Integer.parseInt(cou.substring(3));
-				discount = getTotalAmount()/100*num;
+				discount = getTotalAmount() / 100 * num;
 				couponApplied = true;
 			}
 		}
@@ -230,11 +230,11 @@ class ShoppingCart{
 		}
 		double total = getTotalAmount();
 		double newTotal = total - discount;
-		double tax = newTotal *15/100;
-		System.out.println("Total:"+getTotalAmount());
-		System.out.println("Disc%:"+discount);
-		System.out.println("Tax:"+tax);
-		System.out.println("Payable amount: "+getPayableAmount());
+		double tax = newTotal * 15/100;
+		System.out.println("Total:" + getTotalAmount());
+		System.out.println("Disc%:" + discount);
+		System.out.println("Tax:" + tax);
+		System.out.println("Payable amount: " + getPayableAmount());
 	}
 	/**
 	 * Gets the payable amount.
@@ -244,7 +244,7 @@ class ShoppingCart{
 	public double getPayableAmount() {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
-		double tax = newTotal *15/100;
-		return newTotal+tax;
+		double tax = newTotal * 15/100;
+		return newTotal + tax;
 	}
 }

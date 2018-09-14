@@ -1,5 +1,13 @@
 import java.util.Scanner;
+/**
+ * item_description.
+ */
 final class Solution {
+    /**
+     * function_description.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         ShoppingCart shop = new ShoppingCart();
         Scanner sc = new Scanner(System.in);
@@ -41,6 +49,5 @@ final class Solution {
                 break;
             }
         }
-
     }
 }
