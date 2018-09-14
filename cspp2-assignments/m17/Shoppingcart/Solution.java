@@ -1,10 +1,14 @@
 import java.util.Scanner;
-/**
- * item_description.
+/**.
+ * Class for solution.
  */
 final class Solution {
-    /**
-     * function_description.
+    /**.
+     * Constructs the object.
+     */
+    private Solution() { }
+    /**.
+     * { function_description }
      *
      * @param      args  The arguments
      */
@@ -17,27 +21,27 @@ final class Solution {
             switch (input[0]) {
             case "Item":
                 String[] tokens = input[1].split(",");
-                shop.addToCatalog(new Item(tokens[0], tokens[1], tokens[2]));
+    shop.addToCatalog(new Item(tokens[0], tokens[1], tokens[2]));
                 break;
             case "catalog":
                 shop.showCatalog();
                 break;
             case "add":
                 String[] tokens1 = input[1].split(",");
-                shop.addToCart(new Item(tokens1[0], tokens1[1]));
+            shop.addToCart(new Item(tokens1[0], tokens1[1]));
                 break;
             case "show":
                 shop.showCart();
                 break;
             case "totalAmount":
-                System.out.println("totalAmount: " + shop.getTotalAmount());
+        System.out.println("totalAmount: " + shop.getTotalAmount());
                 break;
             case "payableAmount":
-                System.out.println("Payable amount: " + shop.getPayableAmount());
+System.out.println("Payable amount: " + shop.getPayableAmount());
                 break;
             case "remove":
-                String[] tokens12 = input[1].split(",");
-                shop.removeFromCart(new Item(tokens12[0], tokens12[1]));
+            String[] tokens12 = input[1].split(",");
+        shop.removeFromCart(new Item(tokens12[0], tokens12[1]));
                 break;
             case "coupon":
                 shop.applyCoupon(input[1]);
@@ -45,9 +49,11 @@ final class Solution {
             case "print":
                 shop.printInvoice();
                 break;
-            default:
+                default:
                 break;
             }
         }
+
     }
+
 }
