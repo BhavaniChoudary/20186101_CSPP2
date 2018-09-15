@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * Class for quiz.
+ */
 class Quiz {
 
 }
@@ -97,4 +100,6 @@ public final class Solution {
         // write your code here to display the score report
     }
 }
+
+
 
