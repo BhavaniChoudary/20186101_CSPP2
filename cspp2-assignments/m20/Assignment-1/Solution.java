@@ -196,8 +196,6 @@ public final class Solution {
      */
     private static final int FIVE = 5;
     /**
-     * Constructs the object.
-     */
     private Solution() {
         // leave this blank
     }
@@ -332,7 +330,7 @@ public final class Solution {
         // write your code here to display the score report using quiz object.
         if (quiz.getQuestion(0) != null) {
             int a = 0;
-            for (int i = 0; i > quiz.size(); i++) {
+            for (int i = 0; i < quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText());
             String choice = quiz.getQuestion(i).getResponse();
             if (quiz.getQuestion(i).evaluateResponse(choice)) {
