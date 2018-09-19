@@ -191,7 +191,13 @@ class Quiz {
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * var_description.
+     */
     private static final int FIVE = 5;
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         // leave this blank
     }
@@ -271,7 +277,7 @@ public final class Solution {
                 throw new Exception(tokens[0]
                     + " does not have enough answer choices");
             }
-            if (Integer.parseInt(tokens[2]) < 1
+            if (Integer.parseInt(tokens[2]) > 1
                 || Integer.parseInt(tokens[2]) > choice.length) {
                 throw new Exception(
                     "Error! Correct answer choice number is out of range for "
