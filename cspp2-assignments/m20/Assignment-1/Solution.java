@@ -124,7 +124,7 @@ class Question {
      * @return     String representation of the object.
      */
     public String toString() {
-        String s = " ";
+        String s = "";
         return s;
     }
 }
@@ -135,7 +135,7 @@ class Quiz {
     /**
      * { var_description }.
      */
-    private final int onehundred = 100;
+    private final int onehundred = 10;
     /**
      * { var_description }.
      */
