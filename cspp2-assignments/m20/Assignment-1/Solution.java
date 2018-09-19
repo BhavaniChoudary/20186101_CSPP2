@@ -124,7 +124,7 @@ class Question {
      * @return     String representation of the object.
      */
     public String toString() {
-        String s = "";
+        String s = " ";
         return s;
     }
 }
