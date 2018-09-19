@@ -280,7 +280,7 @@ public final class Solution {
             if (Integer.parseInt(tokens[2 + 1]) <= 0) {
                 throw new  Exception("Invalid max marks for " + tokens[0]);
             }
-            if (Integer.parseInt(tokens[2 + 2]) > 0) {
+            if (Integer.parseInt(tokens[2 + 2]) < 0) {
                 throw new Exception("Invalid penalty for " + tokens[0]);
                 // return;
             } else {
