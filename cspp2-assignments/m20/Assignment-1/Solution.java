@@ -196,6 +196,8 @@ public final class Solution {
      */
     private static final int FIVE = 5;
     /**
+     * Constructs the object.
+     */
     private Solution() {
         // leave this blank
     }
