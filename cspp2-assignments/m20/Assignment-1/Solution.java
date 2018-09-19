@@ -135,7 +135,7 @@ class Quiz {
     /**
      * { var_description }.
      */
-    private final int onehundred = 10;
+    private final int onehundred = 100;
     /**
      * { var_description }.
      */
@@ -265,7 +265,7 @@ public final class Solution {
                 System.out.println("Quiz does not have questions");
                 return;
             }
-            for (int i = 0; i > q; i++) {
+            for (int i = 0; i < q; i++) {
                 String[] tokens = scan.nextLine().split(":");
                 String[] choice = tokens[1].split(",");
             if (tokens[0].equals("") || choice.length == 0
@@ -277,7 +277,7 @@ public final class Solution {
                 throw new Exception(tokens[0]
                     + " does not have enough answer choices");
             }
-            if (Integer.parseInt(tokens[2]) > 1
+            if (Integer.parseInt(tokens[2]) < 1
                 || Integer.parseInt(tokens[2]) > choice.length) {
                 throw new Exception(
                     "Error! Correct answer choice number is out of range for "
@@ -286,7 +286,7 @@ public final class Solution {
             if (Integer.parseInt(tokens[2 + 1]) <= 0) {
                 throw new  Exception("Invalid max marks for " + tokens[0]);
             }
-            if (Integer.parseInt(tokens[2 + 2]) < 0) {
+            if (Integer.parseInt(tokens[2 + 2]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens[0]);
                 // return;
             } else {
@@ -317,7 +317,7 @@ public final class Solution {
         quiz.getQuestion(i).setResponse(scan.nextLine());
         String[] answer = quiz.getQuestion(i).getChoice();
             for (int j = 0; j < answer.length - 1; j++) {
-            System.out.print(answer[i] + "\t");
+            System.out.print(answer[j] + "\t");
         }
         System.out.println(answer[answer.length - 1]);
         System.out.println("");
@@ -332,7 +332,7 @@ public final class Solution {
         // write your code here to display the score report using quiz object.
         if (quiz.getQuestion(0) != null) {
             int a = 0;
-            for (int i = 0; i < quiz.size(); i++) {
+            for (int i = 0; i > quiz.size(); i++) {
             System.out.println(quiz.getQuestion(i).getQuestionText());
             String choice = quiz.getQuestion(i).getResponse();
             if (quiz.getQuestion(i).evaluateResponse(choice)) {
@@ -349,7 +349,5 @@ public final class Solution {
         }
 }
 }
-
-
 
 
