@@ -57,24 +57,46 @@ class Task {
 	}
 }
 
+class Todoist{
+	
+	Task[] tasks;
+	int taskArray;
 
-class Todoist {
 	Todoist() {
+		tasks = new Task[10];
+		taskArray = 0;
+	}
 
+	public void addTask(Task t) {
+		tasks[taskArray++] = t;
 	}
-	void totalTime4Completion() {
 
-	}
-	String[] getNextTask(String task, int a) {
-		String next_task[];
-		next_task = new String[10];
-		return next_task;
-	}
-	String getNextTask(String task) {
-		String next_task = "";
-		return next_task;
+	public String toString() {
+		for(int i = 0; i < taskArray; i++) {
+			String ret = tasks[i].toString();
+			System.out.println(ret);
+		}
+		return "";
 	}
 }
+
+// class Todoist {
+// 	Todoist() {
+
+// 	}
+// 	void totalTime4Completion() {
+
+// 	}
+// 	String[] getNextTask(String task, int a) {
+// 		String next_task[];
+// 		next_task = new String[10];
+// 		return next_task;
+// 	}
+// 	String getNextTask(String task) {
+// 		String next_task = "";
+// 		return next_task;
+// 	}
+// }
 /**
  * Class for todoist main.
  */
@@ -98,9 +120,9 @@ public class TodoistMain {
 			case "print-todoist":
 				System.out.println(todo);
 				break;
-			case "get-next":
-				System.out.println(todo.getNextTask(tokens[1]));
-				break;
+			// case "get-next":
+			// 	System.out.println(todo.getNextTask(tokens[1]));
+			// 	break;
 			// case "get-next-n":
 			// 	int n = Integer.parseInt(tokens[2]);
 			// 	Task[] tasks = todo.getNextTask(tokens[1], n);
