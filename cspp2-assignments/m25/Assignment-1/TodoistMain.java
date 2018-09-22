@@ -24,6 +24,24 @@ class Task {
 		this.status = status;
 	}
 
+	public String title() {
+		return title;
+	}
+	public String assignedTo() {
+		return assignedTo;
+	}
+	public int timeTocomplete() {
+		return timeTocomplete;
+	}
+	public boolean important() {
+		return important;
+	}
+	public boolean urgent() {
+		return urgent;
+	}
+	public String status() {
+		return status;
+	}
 	public String toString() {
 		if (important) {
 			ifimportant = "Important";
@@ -81,7 +99,7 @@ public class TodoistMain {
 				System.out.println(todo);
 				break;
 			case "get-next":
-				// System.out.println(todo.getNextTask(tokens[1]));
+				System.out.println(todo.getNextTask(tokens[1]));
 				break;
 			case "get-next-n":
 				int n = Integer.parseInt(tokens[2]);
