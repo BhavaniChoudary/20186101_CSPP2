@@ -28,6 +28,20 @@ class Task {
         this.important = important;
         this.urgent = urgent;
         this.status = status;
+        try {
+            if (title.length() <= 0) {
+                throw new Exception("Title not provided");
+            }
+            if (timeTocomplete <= 0) {
+                throw new Exception("Invalid timeToComplete " + timeTocomplete);
+            }
+            if (status.equals("todo") || status.equals("done")) {
+            } else {
+                throw new Exception("Invalid status " + status);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     // public String title() {
