@@ -19,6 +19,7 @@ class Task {
     private String status;
     String ifimportant;
     String urgency;
+    boolean isException = false;
 
     Task(String title, String assignedTo, int timeTocomplete, boolean important, boolean urgent, String status) {
         this.title = title;
