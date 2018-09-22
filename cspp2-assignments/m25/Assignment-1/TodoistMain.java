@@ -4,6 +4,11 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
+class titleException extends Exception {
+	public String toString() {
+		return "Title not provided";
+	}
+}
 
 class Task {
 	private String title;
