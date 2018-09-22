@@ -13,7 +13,7 @@ class Task {
 	private boolean urgent;
 	private String status;
 	String ifimportant;
-	String new_urgent;
+	String urgency;
 
 	Task(String title, String assignedTo, int timeTocomplete, boolean important, boolean urgent, String status) {
 		this.title = title;
@@ -26,16 +26,16 @@ class Task {
 
 	public String toString() {
 		if (important) {
-			ifimportant = "importantortant";
+			ifimportant = "Important";
 		} else {
-			ifimportant = "Not importantortant";
+			ifimportant = "Not Important";
 		}
 		if (urgent) {
-			new_urgent = "Urgent";
+			urgency = "Urgent";
 		} else {
-			new_urgent = "Not Urgent";
+			urgency = "Not Urgent";
 		}
-		return title + ", " + assignedTo + ", " + timeTocomplete + ", " + ifimportant + ", " + new_urgent + ", " + status;
+		return title + ", " + assignedTo + ", " + timeTocomplete + ", " + ifimportant + ", " + urgency + ", " + status;
 	}
 }
 
