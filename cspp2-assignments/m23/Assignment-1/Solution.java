@@ -120,3 +120,4 @@ public final class Solution {
         sim.documentSimilarity();
     }
 }
+
