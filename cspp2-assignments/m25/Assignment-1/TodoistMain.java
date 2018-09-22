@@ -19,7 +19,6 @@ class Task {
 	private String status;
 	String ifimportant;
 	String urgency;
-	boolean isException = false;
 
 	Task(String title, String assignedTo, int timeTocomplete, boolean important, boolean urgent, String status) {
 		this.title = title;
@@ -28,58 +27,25 @@ class Task {
 		this.important = important;
 		this.urgent = urgent;
 		this.status = status;
-		try {
-			if (title.length() <= 0) {
-				throw new Exception("Title not provided");
-			}
-			if (timeTocomplete <= 0) {
-				throw new Exception("Invalid timeToComplete " + timeTocomplete);
-			}
-			if (status.equals("todo") || status.equals("done")) {
-			} else {
-				throw new Exception("Invalid status " + status);
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-		}
 	}
-	int gettimeTocomplete(){
-		return timeTocomplete;
-	}
-	String getTaskTitle() {
-		return title;
-	}
-	String getAssignedTo() {
-		return assignedTo;
-	}
-	boolean getUrgent() {
-		return urgent;
-	}
-	boolean getImp() {
-		return important;
-	}
-	String getStatus() {
-		return status;
-	}
-
 
 	// public String title() {
-	//  return title;
+	// 	return title;
 	// }
 	// public String assignedTo() {
-	//  return assignedTo;
+	// 	return assignedTo;
 	// }
 	// public int timeTocomplete() {
-	//  return timeTocomplete;
+	// 	return timeTocomplete;
 	// }
 	// public boolean important() {
-	//  return important;
+	// 	return important;
 	// }
 	// public boolean urgent() {
-	//  return urgent;
+	// 	return urgent;
 	// }
 	// public String status() {
-	//  return status;
+	// 	return status;
 	// }
 	public String toString() {
 		if (important) {
@@ -120,21 +86,21 @@ class Todoist{
 }
 
 // class Todoist {
-//  Todoist() {
+// 	Todoist() {
 
-//  }
-//  void totalTime4Completion() {
+// 	}
+// 	void totalTime4Completion() {
 
-//  }
-//  String[] getNextTask(String task, int a) {
-//      String next_task[];
-//      next_task = new String[10];
-//      return next_task;
-//  }
-//  String getNextTask(String task) {
-//      String next_task = "";
-//      return next_task;
-//  }
+// 	}
+// 	String[] getNextTask(String task, int a) {
+// 		String next_task[];
+// 		next_task = new String[10];
+// 		return next_task;
+// 	}
+// 	String getNextTask(String task) {
+// 		String next_task = "";
+// 		return next_task;
+// 	}
 // }
 /**
  * Class for todoist main.
@@ -163,13 +129,13 @@ public class TodoistMain {
 				//System.out.println(todo.getNextTask(tokens[1]));
 				break;
 			// case "get-next-n":
-			//  int n = Integer.parseInt(tokens[2]);
-			//  Task[] tasks = todo.getNextTask(tokens[1], n);
-			//  System.out.println(Arrays.deepToString(tasks));
-			//  break;
+			// 	int n = Integer.parseInt(tokens[2]);
+			// 	Task[] tasks = todo.getNextTask(tokens[1], n);
+			// 	System.out.println(Arrays.deepToString(tasks));
+			// 	break;
 			// case "total-time":
-			//  System.out.println(todo.totalTime4Completion());
-			//  break;
+			// 	System.out.println(todo.totalTime4Completion());
+			// 	break;
 			default:
 				break;
 			}
