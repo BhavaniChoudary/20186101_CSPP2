@@ -24,24 +24,24 @@ class Task {
 		this.status = status;
 	}
 
-	public String title() {
-		return title;
-	}
-	public String assignedTo() {
-		return assignedTo;
-	}
-	public int timeTocomplete() {
-		return timeTocomplete;
-	}
-	public boolean important() {
-		return important;
-	}
-	public boolean urgent() {
-		return urgent;
-	}
-	public String status() {
-		return status;
-	}
+	// public String title() {
+	// 	return title;
+	// }
+	// public String assignedTo() {
+	// 	return assignedTo;
+	// }
+	// public int timeTocomplete() {
+	// 	return timeTocomplete;
+	// }
+	// public boolean important() {
+	// 	return important;
+	// }
+	// public boolean urgent() {
+	// 	return urgent;
+	// }
+	// public String status() {
+	// 	return status;
+	// }
 	public String toString() {
 		if (important) {
 			ifimportant = "Important";
