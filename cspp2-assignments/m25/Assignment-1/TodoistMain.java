@@ -1,15 +1,19 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 /**
   * write your code below this comment
   */
+/**
+ * Exception for signaling title errors.
+ */
 class titleException extends Exception {
 	public String toString() {
 		return "Title not provided";
 	}
 }
-
+/**
+ * Class for task.
+ */
 class Task {
 	private String title;
 	private String assignedTo;
@@ -198,3 +202,5 @@ public class TodoistMain {
 		startTest();
 	}
 }
+
+
