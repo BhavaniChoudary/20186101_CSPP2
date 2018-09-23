@@ -69,15 +69,15 @@ class Frequency {
         int rows = s1.length();
         int columns = s2.length();
         double stringLength = rows + columns;
-        int[][] maximum = new int[rows+1][columns+1];
+        int[][] maximum = new int[rows + 1][columns + 1];
         int result = 0;
         double similarity = 0;
         for (int i = 0; i <= rows; i++) {
             for (int j = 0; j <= columns; j++) {
                 if (i == 0 || j == 0) {
                     maximum[i][j] = 0;
-                } else if (s1.charAt(i-1) == s2.charAt(j-1)) {
-                    maximum[i][j] = maximum[i-1][j-1]+1;
+                } else if (s1.charAt(i-1) == s2.charAt(j - 1)) {
+                    maximum[i][j] = maximum[i - 1][j - 1] + 1;
                     //result = max(result, maximum[i][j]);
                 } else {
                     maximum[i][j] = 0;
