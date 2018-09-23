@@ -17,12 +17,12 @@ class Frequency {
      *
      * @return     String representation of the object.
      */
-    public static String toString(File filename) {
+    public static String toString(final File filename) {
         String s = "";
         try {
             Scanner input = new Scanner(new FileReader(filename));
             StringBuilder sb = new StringBuilder();
-            while(input.hasNext()) {
+            while (input.hasNext()) {
                 sb.append(input.next());
                 sb.append(" ");
             }
@@ -41,7 +41,8 @@ class Frequency {
      * @return     { description_of_the_return_value }
      */
     public static Map removeAll(String text) {
-        String[] wordList = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
+        String[] wordList = text.replaceAll
+        ("[^a-zA-Z. ]","").toLowerCase().split(" ");
 
         //System.out.println(Arrays.toString(wordList1));
         //return Arrays.toString(wordList1);
@@ -65,7 +66,7 @@ class Frequency {
      *
      * @return     { description_of_the_return_value }
      */
-    public static double similarString(String s1, String s2) {
+    public static double similarString(final String s1, final String s2) {
         int rows = s1.length();
         int columns = s2.length();
         double stringLength = rows + columns;
@@ -76,7 +77,7 @@ class Frequency {
             for (int j = 0; j <= columns; j++) {
                 if (i == 0 || j == 0) {
                     maximum[i][j] = 0;
-                } else if (s1.charAt(i-1) == s2.charAt(j - 1)) {
+                } else if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
                     maximum[i][j] = maximum[i - 1][j - 1] + 1;
                     //result = max(result, maximum[i][j]);
                 } else {
@@ -88,7 +89,7 @@ class Frequency {
             }
         }
         similarity = Math.round(((result * 2) / stringLength) * 100D) / 100D;
-        return (similarity*100);
+        return (similarity * 100);
         }
 }
 /**
@@ -115,12 +116,12 @@ class Solution {
                 if (i == j) {
                     result[i][j] = 100;
                 } else {
-                result[i][j] = Frequency.similarString(Frequency.toString(listoffiles[i]),
-                    Frequency.toString(listoffiles[j]));
+                result[i][j] = Frequency.similarString(Frequency.toString
+                    (listoffiles[i]),Frequency.toString(listoffiles[j]));
                 if (maximum < result[i][j]) {
                     maximum = result[i][j];
-                    result1 = "Maximum similarity is in between " + listoffiles[i].getName()
-                    + " and " + listoffiles[j].getName();
+                    result1 = "Maximum similarity is in between " +
+                    listoffiles[i].getName()+ " and " + listoffiles[j].getName();
 
                 }
             }
@@ -146,3 +147,4 @@ class Solution {
     }
     }
 }
+
