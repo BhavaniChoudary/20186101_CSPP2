@@ -87,7 +87,7 @@ class Frequency {
                 }
             }
         }
-        similarity = Math.round(((result*2)/stringLength)*100D)/100D;
+        similarity = Math.round(((result * 2) / stringLength) * 100D) / 100D;
         return (similarity*100);
         }
 }
@@ -100,7 +100,7 @@ class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try {
         Frequency f = new Frequency();
         Scanner sc = new Scanner(System.in);
@@ -115,10 +115,12 @@ class Solution {
                 if (i == j) {
                     result[i][j] = 100;
                 } else {
-                result[i][j] = Frequency.similarString(Frequency.toString(listoffiles[i]),Frequency.toString(listoffiles[j]));
+                result[i][j] = Frequency.similarString(Frequency.toString(listoffiles[i]),
+                    Frequency.toString(listoffiles[j]));
                 if (maximum < result[i][j]) {
                     maximum = result[i][j];
-                    result1 = "Maximum similarity is in between " + listoffiles[i].getName() + " and " + listoffiles[j].getName();
+                    result1 = "Maximum similarity is in between " + listoffiles[i].getName()
+                    + " and " + listoffiles[j].getName();
 
                 }
             }
@@ -139,7 +141,7 @@ class Solution {
         System.out.println(result1);
 
 
-    }catch(NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
         System.out.println("empty directory");
     }
     }
