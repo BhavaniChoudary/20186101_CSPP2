@@ -1,123 +1,129 @@
-import java.io.FileReader;
-import java.io.File;
-import java.io.BufferedReader;
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-/**
- * { class for sloution where we write the main function }.
- */
-public final class Solution {
-    /**
-     * Constructs the object.
-     */
-    private Solution() {
-     /**
-      * { private constructor }.
-      */
-    }
-    /**
-     * { This function is used to convert the file to string }.
-     *
-     * @param      fileContent  The file content
-     *
-     * @return     { returns the file with all the lower case letters }.
-     */
-    public static String convertString(final String fileContent) {
-        String ret = "";
-        Pattern p = Pattern.compile("[^0-9_]");
-        Matcher match = p.matcher(fileContent);
+import java.util.*;
+import java.io.*;
 
-        while (match.find()) {
-            ret += match.group();
-        }
-        return ret.toLowerCase();
+
+class Frequency {
+
+    Frequency() {
     }
-    /**
-     * { the function is used to return the hashmap }.
-     *
-     * @param      input  The input
-     *
-     * @return     { returns hashmap }.
-     */
-    public static HashMap<String, Integer> generateHashMap(final String input) {
-        String[] inputs = input.split(" ");
-        HashMap<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < inputs.length; i++) {
-            int count = 1;
-            for (int j = 0; j < inputs.length; j++) {
-                if (inputs[i].equals(inputs[j]) && i != j) {
-                    count += 1;
+    public static String toString(File filename) {
+        String s = "";
+        try {
+            Scanner input = new Scanner(new FileReader(filename));
+            StringBuilder sb = new StringBuilder();
+            while(input.hasNext()) {
+                sb.append(input.next());
+                sb.append(" ");
+            }
+            input.close();
+            s = sb.toString();
+        } catch (FileNotFoundException e) {
+            System.out.println("no file");
+        }
+        return s;
+    }
+    public static Map removeAll(String text) {
+        String[] wordList = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
+
+        //System.out.println(Arrays.toString(wordList1));
+        //return Arrays.toString(wordList1);
+        Map<String, Integer> map = new HashMap<>();
+        int freq = 0;
+        for (int i = 0; i < wordList.length; i++) {
+            if (!map.containsKey(wordList[i])) {
+                map.put(wordList[i], 1);
+            } else {
+                map.put(wordList[i], map.get(wordList[i]) + 1);
+            }
+        }
+        //System.out.println(map);
+        return map;
+
+
+    }
+    public static double similarString(String s1, String s2) {
+        int rows = s1.length();
+        int columns = s2.length();
+        double stringLength = rows + columns;
+        int[][] maximum = new int[rows+1][columns+1];
+        int result = 0;
+        double similarity = 0;
+        for (int i = 0; i <= rows; i++) {
+            for (int j = 0; j <= columns; j++) {
+                if (i == 0 || j == 0) {
+                    maximum[i][j] = 0;
+                } else if (s1.charAt(i-1) == s2.charAt(j-1)) {
+                    maximum[i][j] = maximum[i-1][j-1]+1;
+                    //result = max(result, maximum[i][j]);
+                } else {
+                    maximum[i][j] = 0;
+                }
+                if (result < maximum[i][j]) {
+                    result = maximum[i][j];
                 }
             }
-            if (map.containsKey(inputs[i])) {
-                String a;
-            } else {
-                map.put(inputs[i], count);
-            }
         }
-        return map;
-    }
-    /**
-     * { This function is to read the folder to compare}.
-     *
-     * @param      folder     The folder
-     * @param      name       The name
-     *
-     * @return     { returns the content }.
-     *
-     * @throws     Exception  { prints the table}.
-     */
-    public static String fileRead(final String folder, final String name)
-        throws Exception {
-        BufferedReader br = new BufferedReader(
-            new FileReader("C:\\20186101_CSPP2\\CSPP2_assignments\\m23\\"
-                + "Assignment-1\\"
-                + folder + "\\" + name));
-        String content = "";
-        String line;
-        try {
-            while ((line = br.readLine()) != null) {
-                content += line;
-            }
-        } catch (Exception e) {
-                e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        //System.out.println(result);
+        similarity = Math.round(((result*2)/stringLength)*100D)/100D;
+        //System.out.println(stringLength);
+        return (similarity*100);
         }
-        return content;
-    }
-    /**
-     * {main class}.
-     *
-     * @param      args       The arguments
-     *
-     * @throws     Exception  { exception_description }
-     */
-    public static void main(final String[] args) throws Exception {
-        Similarity sim = new Similarity();
-        Scanner s = new Scanner(System.in);
-        if (!(s.hasNext())) {
-            System.out.println("empty directory");
-            return;
-        }
-        String folder = s.nextLine();
-        File file = new File("C:\\20186101_CSPP2\\CSPP2_assignments\\m23\\"
-                + "Assignment-1\\" + folder);
-        String[] str = file.list();
-        for (String files : str) {
-            String content = fileRead(folder, files);
-            String inter = convertString(content);
-            HashMap<String, Integer> hashmap = generateHashMap(inter);
-            Document d = new Document(files, hashmap);
-            sim.addDocument(d);
-        }
-        sim.documentSimilarity();
-    }
 }
 
+class Solution {
+
+    public static void main(String[] args) {
+        try {
+        Frequency f = new Frequency();
+        Scanner sc = new Scanner(System.in);
+        // String line = sc.next();
+        File input = new File(sc.next());
+        File[] listoffiles = input.listFiles();
+        // for (File name:listoffiles) {
+        //  System.out.println(name);
+        // }
+        double maximum = 0;
+        String result1 = "";
+        int length = listoffiles.length;
+        double[][] result = new double[length][length];
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (i == j) {
+                    result[i][j] = 100;
+                } else {
+                result[i][j] = Frequency.similarString(Frequency.toString(listoffiles[i]),Frequency.toString(listoffiles[j]));
+                if (maximum < result[i][j]) {
+                    maximum = result[i][j];
+                    result1 = "Maximum similarity is in between " + listoffiles[i].getName() + " and " + listoffiles[j].getName();
+
+                }
+            }
+            }
+        }
+        System.out.print("\t");
+        for (int i = 0; i < length; i++) {
+            System.out.print("\t" + listoffiles[i].getName());
+        }
+        System.out.println();
+        for (int i = 0; i < length; i++) {
+            System.out.print(listoffiles[i].getName() + "\t");
+            for (int j = 0; j < length; j++) {
+                System.out.print(result[i][j] + "\t\t");
+            }
+            System.out.println();
+        }
+        System.out.println(result1);
+
+
+    }catch(NoSuchElementException e) {
+        System.out.println("Empty Directory");
+    }
+
+        // String stext1 = sc.nextLine().toLowerCase();
+        // String stext2 = sc.nextLine().toLowerCase();
+        // Frequency feq = new Frequency();
+
+
+
+    }
+}
