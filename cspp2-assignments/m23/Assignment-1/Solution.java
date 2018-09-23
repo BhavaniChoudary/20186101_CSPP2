@@ -41,11 +41,8 @@ class Frequency {
      * @return     { description_of_the_return_value }
      */
     public static Map removeAll(String text) {
-        String[] wordList = text.replaceAll
-        ("[^a-zA-Z. ]","").toLowerCase().split(" ");
-
-        //System.out.println(Arrays.toString(wordList1));
-        //return Arrays.toString(wordList1);
+        String[] wordList = text.replaceAll("[^a-zA-Z. ]","")
+        .toLowerCase().split(" ");
         Map<String, Integer> map = new HashMap<>();
         int freq = 0;
         for (int i = 0; i < wordList.length; i++) {
@@ -121,7 +118,7 @@ class Solution {
                 if (maximum < result[i][j]) {
                     maximum = result[i][j];
                     result1 = "Maximum similarity is in between " +
-                    listoffiles[i].getName()+ " and " + listoffiles[j].getName();
+                    listoffiles[i].getName() + " and " + listoffiles[j].getName();
 
                 }
             }
