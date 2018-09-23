@@ -1,130 +1,102 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.io.FileReader;
 
+/**
+ * solution  class is to read the input and forward to other class.
+ */
+final  class Solution {
+    /**
+     * Constructs the object.
+     */
+     private Solution() {
+//empty constructer.
+    }
+    /**
+     * reads the text files in a entire folder.
+     *
+     * @param      args       The arguments
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public static void main(final String[] args) throws Exception {
+        Scanner s = new Scanner(System.in);
+        while (s.hasNext()) {
+            String folder = s.nextLine();
+File file = new File(
+"F:\\cspp2\\cspp2-assignments\\m23\\Assignment-1\\Assignment-1\\" + folder);
+            String[] file3 = file.list();
+            int len = file3.length;
+            //System.out.println(len);
+            //System.out.println(Arrays.toString(file3));
+            //System.out.println(file3[0]);
+            if (len != 0) {
+                Arrays.sort(file3);
+                System.out.print("      ");
+                System.out.print("  ");
+                System.out.print("\t");
+                for (int c = 0; c < file3.length - 1; c++) {
+                    System.out.print(file3[c] + "\t");
+                }
+                System.out.println(file3[file3.length - 1] + "\t");
+                long[][] result = new long[file3.length][file3.length];
+                for (int a = 0; a < file3.length; a++) {
+                    System.out.print(file3[a] + "\t");
+                    for (int b = 0; b < file3.length; b++) {
+File file1 = new File(
+    "F:\\cspp2\\cspp2-assignments\\m23\\Assignment-1\\Assignment-1\\" + folder
+ + "\\" + file3[a]);
+File file2 = new File(
+    "F:\\cspp2\\cspp2-assignments\\m23\\Assignment-1\\Assignment-1\\"
+ + folder + "\\" + file3[b]);
+        BufferedReader br1 = new BufferedReader(new FileReader(file1));
+        BufferedReader br2 = new BufferedReader(new FileReader(file2));
+                        String line1;
+                        String line2;
+                        String inp1 = "";
+                        String inp2 = "";
+                        Count cu = new Count();
+                        while ((line1 = br1.readLine()) != null) {
+                            line1 = line1.toLowerCase();
+inp1 = inp1 + line1.replaceAll("[0-9_ ]", " ").replaceAll("\\s+", " ");
+                        }
+                        while ((line2 = br2.readLine()) != null) {
+                            line2 = line2.toLowerCase();
+    inp2 = inp2 + line2.replaceAll("[0-9_ ]", " ").replaceAll("\\s+", " ");
+                        }
+                        //System.out.println("call3");
+                        long ot = cu.bagOFWords(inp1, inp2);
+                        result[a][b] = ot;
+                        System.out.print(ot);
+                        System.out.print("  " + "\t");
+                    }
+                    System.out.println();
 
-class Frequency {
+                }
+                long max = result[0][1];
+                String[] index = new String[2];
+                index[0] = file3[0];
+                index[1] = file3[0];
+                for (int d = 0; d < file3.length; d++) {
+                    for (int e = 0; e < file3.length; e++) {
+                        if (result[d][e] > max && d != e) {
+                            max = result[d][e];
+                            index[0] = file3[d];
+                            index[1] = file3[e];
+                        }
 
-	Frequency() {
-	}
-	public static String toString(File filename) {
-		String s = "";
-		try {
-			Scanner input = new Scanner(new FileReader(filename));
-			StringBuilder sb = new StringBuilder();
-			while(input.hasNext()) {
-				sb.append(input.next());
-				sb.append(" ");
-			}
-			input.close();
-			s = sb.toString();
-		} catch (FileNotFoundException e) {
-			System.out.println("no file");
-		}
-		return s;
-	}
-	public static Map removeAll(String text) {
-		String[] wordList = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
+                    }
 
-		//System.out.println(Arrays.toString(wordList1));
-		//return Arrays.toString(wordList1);
-		Map<String, Integer> map = new HashMap<>();
-		int freq = 0;
-		for (int i = 0; i < wordList.length; i++) {
-			if (!map.containsKey(wordList[i])) {
-				map.put(wordList[i], 1);
-			} else {
-				map.put(wordList[i], map.get(wordList[i]) + 1);
-			}
-		}
-		//System.out.println(map);
-		return map;
-
-
-	}
-	public static int similarity(String doc1, String doc2) {
-		//System.out.println("hello");
-		double numerator = 0;
-		double sum1 = 0;
-		double sum2 = 0;
-		Map<String, Integer> mapOne = removeAll(doc1);
-		Map<String, Integer> mapTwo = removeAll(doc2);
-		for (String element1:mapOne.keySet()) {
-			for (String element2:mapTwo.keySet()) {
-				if (element1.equals(element2)){
-					numerator += mapOne.get(element1)*mapTwo.get(element2);
-				}
-			}
-		}
-		for (String element1:mapOne.keySet()) {
-			sum1 += Math.pow(mapOne.get(element1), 2);
-		}
-		for (String element2:mapTwo.keySet()) {
-			sum2 += Math.pow(mapTwo.get(element2), 2);
-		}
-		double denominator = Math.sqrt(sum1) * Math.sqrt(sum2);
-		// System.out.println(sum1);
-		// System.out.println(sum2);
-		// System.out.println(numerator);
-		// System.out.println(denominator);
-		return (int)((((numerator / denominator) * 100D) / 100D) * 100);
-
-
-	}
+                }
+System.out.print(
+    "Maximum similarity is between " + index[0] + " and " + index[1]);
+            } else {
+                System.out.println("empty directory");
+            }
+        }
+        System.out.println("empty directory");
+    }
 }
 
-class Solution {
-	public static void main(String[] args) {
-		try {
-		Frequency f = new Frequency();
-		Scanner sc = new Scanner(System.in);
-		// String line = sc.next();
-		File input = new File(sc.next());
-		File[] listoffiles = input.listFiles();
-		// for (File name:listoffiles) {
-		// 	System.out.println(name);
-		// }
-		int maximum = 0;
-		String result1 = "";
-		int length = listoffiles.length;
-		int[][] result = new int[length][length];
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < length; j++) {
-				if (i == j) {
-					result[i][j] = 100;
-				} else {
-				result[i][j] = Frequency.similarity(Frequency.toString(listoffiles[i]),Frequency.toString(listoffiles[j]));
-				if (maximum < result[i][j]) {
-					maximum = result[i][j];
-					result1 = "Maximum similarity is in between " + listoffiles[i].getName() + " and " + listoffiles[j].getName();
-
-				}
-			}
-			}
-		}
-		System.out.print("      \t");
-		for (int i = 0; i < length; i++) {
-			System.out.print("\t" + listoffiles[i].getName());
-		}
-		System.out.println();
-		for (int i = 0; i < length; i++) {
-			System.out.print(listoffiles[i].getName() + "\t");
-			for (int j = 0; j < length; j++) {
-				System.out.print(result[i][j] + "\t\t");
-			}
-			System.out.println();
-		}
-		System.out.println(result1);
-
-
-	}catch(NoSuchElementException e) {
-		System.out.println("empty directory");
-	}
-
-		// String stext1 = sc.nextLine().toLowerCase();
-		// String stext2 = sc.nextLine().toLowerCase();
-		// Frequency feq = new Frequency();
-
-
-
-	}
-}
