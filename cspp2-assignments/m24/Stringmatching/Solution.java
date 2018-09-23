@@ -1,114 +1,140 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
 
+/**
+*Doc class.
+*/
+class Doc {
+    /** empty constructor.
+    */
+    Doc() {
+    }
+    /**
+    *text to string.
+    *@param f File
+    *@return str returns string of that text.
+    */
+    public static String toText(final File f) {
+        String s = "";
+        try {
+            Scanner inp = new Scanner(new FileReader(f));
+            StringBuilder t = new StringBuilder();
+            while (inp.hasNext()) {
+                t.append(inp.next());
+                t.append(" ");
+            }
+            inp.close();
+            s = t.toString();
+        } catch (FileNotFoundException e) {
+            System.out.println("No file");
+        }
+        return s;
+    }
+    /**
+     *document distance.
+     *@param text1 first file
+     *@param text2 second file
+     *@return document distance
+     */
 
-class Frequency {
+    public double stringMatching(final String text1, final String text2) {
+        int l1 = text1.length();
+        int l2 = text2.length();
+        double tl = l1 + l2;
+        int maxValue = 0;
+        double lcs = 0;
+        final int hundred = 100;
+        int[][] arr = new int[l1][l2];
+        for (int i = 0; i < l1; i++) {
+            for (int j = 0; j < l2; j++) {
+                if (text1.charAt(i) == text2.charAt(j)) {
+                    if (i == 0 || j == 0) {
+                        arr[i][j] = 1;
+                    } else {
+                        arr[i][j] = arr[i - 1][j - 1] + 1;
+                    }
+                    if (maxValue < arr[i][j]) {
+                        maxValue = arr[i][j];
+                    }
+                }
+            }
+        }
+        lcs = (((maxValue * 2) / tl) * hundred);
+        return lcs;
+    }
+}
+/** this is the solution class.
+*/
+public final class Solution {
+    /**constructor.
+    */
+    private Solution() {
 
-	Frequency() {
-	}
-	public static String toString(File filename) {
-		String s = "";
-		try {
-			Scanner input = new Scanner(new FileReader(filename));
-			StringBuilder sb = new StringBuilder();
-			while(input.hasNext()) {
-				sb.append(input.next());
-				sb.append(" ");
-			}
-			input.close();
-			s = sb.toString();
-		} catch (FileNotFoundException e) {
-			System.out.println("no file");
-		}
-		return s;
-	}
-	public static Map removeAll(String text) {
-		String[] wordList = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
-		Map<String, Integer> map = new HashMap<>();
-		int freq = 0;
-		for (int i = 0; i < wordList.length; i++) {
-			if (!map.containsKey(wordList[i])) {
-				map.put(wordList[i], 1);
-			} else {
-				map.put(wordList[i], map.get(wordList[i]) + 1);
-			}
-		}
-		return map;
-
-
-	}
-	public static int similarity(String doc1, String doc2) {
-		//System.out.println("hello");
-		double numerator = 0;
-		double sum1 = 0;
-		double sum2 = 0;
-		Map<String, Integer> mapOne = removeAll(doc1);
-		Map<String, Integer> mapTwo = removeAll(doc2);
-		for (String element1:mapOne.keySet()) {
-			for (String element2:mapTwo.keySet()) {
-				if (element1.equals(element2)){
-					numerator += mapOne.get(element1)*mapTwo.get(element2);
-				}
-			}
-		}
-		for (String element1:mapOne.keySet()) {
-			sum1 += Math.pow(mapOne.get(element1), 2);
-		}
-		for (String element2:mapTwo.keySet()) {
-			sum2 += Math.pow(mapTwo.get(element2), 2);
-		}
-		double denominator = Math.sqrt(sum1) * Math.sqrt(sum2);
-		return (int)((((numerator / denominator) * 100D) / 100D) * 100);
-
-
-	}
+    }
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        try  {
+        Scanner sc = new Scanner(System.in);
+        String inp = sc.nextLine();
+        File fls = new File(inp);
+        Doc obj1 = new Doc();
+        File[] list = fls.listFiles();
+        int len = list.length;
+        double max = 0;
+        final int hundred = 100;
+        String res = "";
+        double[][] fileM = new double[len][len];
+        File tmp = null;
+        for (int i = 0; i < list.length; i++) {
+            for (int j = i + 1; j < list.length; j++) {
+                if (list[i].getName().compareTo(list[j].getName()) > 0) {
+                    tmp = list[i];
+                    list[i] = list[j];
+                    list[j] = tmp;
+                }
+            }
+        }
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (i == j) {
+                    fileM[i][j] = hundred;
+                } else {
+                    fileM[i][j] = obj1.stringMatching(
+                        obj1.toText(list[i]), obj1.toText(list[j]));
+                    if (max < fileM[i][j]) {
+                        max = fileM[i][j];
+                        res = "Maximum similarity is between "
+                        + list[i].getName() + " and "
+                        + list[j].getName();
+                    }
+                }
+            }
+        }
+        System.out.print("      \t");
+        for (int i = 0; i < len - 1; i++) {
+            System.out.print("\t" + list[i].getName());
+        }
+        System.out.println("\t" + list[len - 1].getName());
+        for (int i = 0; i < len; i++) {
+            System.out.print(list[i].getName() + "\t");
+            for (int j = 0; j < len; j++) {
+                    System.out.print(
+                        String.format("%.1f", fileM[i][j]) + "\t\t");
+            }
+            System.out.println();
+        }
+     System.out.println(res);
+    } catch (NoSuchElementException e) {
+        System.out.println("Empty Directory");
+    }
+    }
 }
 
-class Solution {
-	public static void main(String[] args) {
-		try {
-		Frequency f = new Frequency();
-		Scanner sc = new Scanner(System.in);
-		File input = new File(sc.next());
-		File[] listoffiles = input.listFiles();
-		int maximum = 0;
-		String result1 = "";
-		int length = listoffiles.length;
-		int[][] result = new int[length][length];
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < length; j++) {
-				if (i == j) {
-					result[i][j] = 100;
-				} else {
-				result[i][j] = Frequency.similarity(Frequency.toString(listoffiles[i]),Frequency.toString(listoffiles[j]));
-				if (maximum < result[i][j]) {
-					maximum = result[i][j];
-					result1 = "Maximum similarity is in between " + listoffiles[i].getName() + " and " + listoffiles[j].getName();
 
-				}
-			}
-			}
-		}
-		System.out.print("      \t");
-		for (int i = 0; i < length; i++) {
-			System.out.print("\t" + listoffiles[i].getName());
-		}
-		System.out.println();
-		for (int i = 0; i < length; i++) {
-			System.out.print(listoffiles[i].getName() + "\t");
-			for (int j = 0; j < length; j++) {
-				System.out.print(result[i][j] + "\t\t");
-			}
-			System.out.println();
-		}
-		System.out.println(result1);
-
-
-	}catch(NoSuchElementException e) {
-		System.out.println("empty directory");
-	}
-
-
-
-	}
-}
