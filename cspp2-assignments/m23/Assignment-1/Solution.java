@@ -113,12 +113,13 @@ class Solution {
                 if (i == j) {
                     result[i][j] = 100;
                 } else {
-                result[i][j] = Frequency.similarString(Frequency.toString
-                    (listoffiles[i]),Frequency.toString(listoffiles[j]));
+                result[i][j] = Frequency.similarString(Frequency.toString(listoffiles
+                    [i]), Frequency.toString(listoffiles[j]));
                 if (maximum < result[i][j]) {
                     maximum = result[i][j];
-                    result1 = "Maximum similarity is in between " +
-                    listoffiles[i].getName() + " and " + listoffiles[j].getName();
+                    result1 = "Maximum similarity is in between "
+                    +listoffiles[i].getName() + " and "
+                    +listoffiles[j].getName();
 
                 }
             }
